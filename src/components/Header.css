@@ -1,0 +1,191 @@
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0);
+  padding: 24px 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: none;
+  overflow: hidden;
+}
+
+/* ULTRA Frosted glass layer */
+.glass-frost-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  
+  /* Stronger blur for ultra-frost effect */
+  backdrop-filter: blur(60px) saturate(220%) brightness(1.2);
+  -webkit-backdrop-filter: blur(60px) saturate(220%) brightness(1.2);
+  
+  /* More opaque white for that milky look */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  
+  /* Grainy texture */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.08; /* Slightly more visible noise */
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 12px;
+  flex-wrap: wrap; /* Allow wrapping for mobile menu */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  transform-origin: left center;
+}
+
+.brand-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+}
+
+.brand-icon {
+  color: var(--accent-color);
+}
+
+.desktop-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  will-change: opacity, transform, width;
+}
+
+.desktop-links.mobile-menu {
+  order: 3; /* Push to bottom of wrap */
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  display: none; /* Controlled by display: flex in JS when expanded */
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 12px 20px !important;
+  }
+  
+  .brand-text {
+    font-size: 1.1rem;
+  }
+  
+  .desktop-links {
+    gap: 20px;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+}
+
+.pill-controls {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 6px; /* Smaller padding */
+  border-radius: 10px;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  pointer-events: none;
+  will-change: opacity, transform, width;
+}
+
+.grid-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-btn.active {
+  transform: rotate(90deg);
+}
+
+.cta-btn {
+  background: var(--btn-color);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(135, 176, 5, 0.1);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  transform-origin: right center;
+}
+
+.cta-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Hidden elements */
+.full-menu, .menu-close, .menu-links {
+  display: none;
+}
