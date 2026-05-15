@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import WaveMarquee from '@/components/WaveMarquee';
 import WorkflowSteps from '@/components/WorkflowSteps';
 import ImpactQuote from '@/components/ImpactQuote';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -17,6 +18,8 @@ export default function Home() {
         <Hero />
         <Features />
       </ScrollReveal>
+      
+      <WaveMarquee />
 
       <WorkflowSteps />
       <ImpactQuote />

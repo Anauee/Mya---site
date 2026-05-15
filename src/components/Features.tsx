@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { BarChart2, Users, MessageSquare, Megaphone, UserCheck, Layers, Settings, ChevronLeft, Plus, BarChart } from 'lucide-react';
+import { BarChart2, Users, MessageSquare, Megaphone, UserCheck, Layers, Settings, ChevronLeft, Plus, BarChart, Search, Filter } from 'lucide-react';
 import './Features.css';
 
 const SESSIONS = [
@@ -10,6 +10,22 @@ const SESSIONS = [
   { id: 'pipeline', label: 'Pipeline', title: 'Pipeline de Vendas', description: 'Acompanhe o progresso de cada negociação no seu funil de vendas.' },
   { id: 'conversas', label: 'Conversas', title: 'Central de Atendimento', description: 'Interaja com seus leads em tempo real através de múltiplos canais.' },
   { id: 'contatos', label: 'Contatos', title: 'Base de Leads Qualificados', description: 'Gerencie sua lista de contatos e visualize o histórico completo de interações.' },
+];
+
+const CONTACT_FILTERS = [
+  'API não oficial', 'API oficial', 'Not on WhatsApp', 'On Whatsapp', 'SP', 'enviado', 'envio 1', 'envio 2', 'respondeu', 'teste'
+];
+
+const CONTACTS_DATA = [
+  { id: 1, name: 'Carlos Ferreira', phone: '+5521986939005', ddd: '21', tags: ['On Whatsapp', 'enviado', 'API oficial'], status: 'opt-in', lastSend: '12/05/2026, 08:23:06', color: '#64748b' },
+  { id: 2, name: 'Mariana Santos', phone: '+5584996537183', ddd: '84', tags: ['On Whatsapp', 'enviado', 'API não oficial'], status: 'opt-in', lastSend: '08/05/2026, 16:34:29', color: '#94a3b8' },
+  { id: 3, name: 'João Silva', phone: '+5547991911940', ddd: '47', tags: ['On Whatsapp', 'enviado', 'API não oficial'], status: 'opt-in', lastSend: '06/05/2026, 16:21:05', color: '#10b981' },
+  { id: 4, name: 'Ana Oliveira', phone: '+552730664002', ddd: '27', tags: ['Not on WhatsApp'], status: 'opt-in', lastSend: '--', color: '#3b82f6' },
+  { id: 5, name: 'Roberto Lima', phone: '+5561986524232', ddd: '61', tags: ['Not on WhatsApp'], status: 'opt-in', lastSend: '--', color: '#f59e0b' },
+  { id: 6, name: 'Fernanda Costa', phone: '+5561998926081', ddd: '61', tags: ['enviado', 'API oficial', 'On Whatsapp'], status: 'opt-in', lastSend: '05/05/2026, 11:34:15', color: '#8b5cf6' },
+  { id: 7, name: 'Lucas Pereira', phone: '+5561998550634', ddd: '61', tags: ['enviado', 'API não oficial', 'On Whatsapp'], status: 'opt-in', lastSend: '06/05/2026, 13:28:20', color: '#ec4899' },
+  { id: 8, name: 'Beatriz Souza', phone: '+553130466171', ddd: '31', tags: ['enviado', 'On Whatsapp'], status: 'opt-in', lastSend: '05/05/2026, 08:31:14', color: '#06b6d4' },
+  { id: 9, name: 'Ricardo Alves', phone: '+5516988122895', ddd: '16', tags: ['enviado', 'On Whatsapp'], status: 'opt-in', lastSend: '05/05/2026, 08:31:19', color: '#10b981' },
 ];
 
 function RollingNumber({ value }: { value: string | number }) {
@@ -130,6 +146,77 @@ export default function Features() {
           stagger: 0.05,
           ease: "back.out(1.2)"
         }, "-=0.4");
+      } else if (activeTab === 'conversas') {
+        gsap.set(".conversas-view-real", { opacity: 0, y: 30, visibility: "hidden" });
+        gsap.set(".chat-item", { opacity: 0, scale: 0.9, visibility: "hidden" });
+        gsap.set(".message-bubble", { opacity: 0, y: 30, visibility: "hidden" });
+
+        tl.to(".conversas-view-real", {
+          opacity: 1,
+          y: 0,
+          visibility: "visible",
+          duration: 0.6,
+          ease: "power3.out"
+        }, "-=0.2");
+
+        tl.to(".chat-item", {
+          opacity: 1,
+          scale: 1,
+          visibility: "visible",
+          duration: 0.4,
+          stagger: 0.1,
+          ease: "back.out(1.5)"
+        }, "-=0.3");
+
+        tl.to(".message-bubble", {
+          opacity: 1,
+          y: 0,
+          visibility: "visible",
+          duration: 0.6,
+          stagger: 1.2, // Delay to simulate "conversation" flow
+          ease: "power2.out"
+        }, "-=0.1");
+      } else if (activeTab === 'contatos') {
+        gsap.set(".contatos-view-real", { opacity: 0, y: 50, visibility: "hidden" });
+        gsap.set(".contacts-top-bar > *, .contacts-actions > *", { opacity: 0, scale: 0.7, visibility: "hidden" });
+        gsap.set(".contacts-table tr", { opacity: 0, y: 30, visibility: "hidden" });
+        gsap.set(".tag-pill", { filter: "grayscale(100%)", opacity: 0, rotationX: -90, z: 20 });
+
+        tl.to(".contatos-view-real", {
+          opacity: 1,
+          y: 0,
+          visibility: "visible",
+          duration: 1.2,
+          ease: "power4.out"
+        }, "-=0.2");
+
+        tl.to(".contacts-top-bar > *, .contacts-actions > *", {
+          opacity: 1,
+          scale: 1,
+          visibility: "visible",
+          duration: 1,
+          stagger: 0.1,
+          ease: "back.out(1.4)"
+        }, "-=0.8");
+
+        tl.to(".contacts-table tr", {
+          opacity: 1,
+          y: 0,
+          visibility: "visible",
+          duration: 0.8,
+          stagger: 0.08,
+          ease: "power3.out"
+        }, "-=0.6");
+
+        tl.to(".tag-pill", {
+          opacity: 1,
+          filter: "grayscale(0%)",
+          rotationX: 0,
+          z: 0,
+          duration: 1.2,
+          stagger: 0.03,
+          ease: "back.out(1.7)"
+        }, "-=0.9");
       } else if (activeTab === 'dashboard') {
         // Only animate header for Dashboard, keep rest as is
       } else {
@@ -165,7 +252,7 @@ export default function Features() {
         </div>
 
         {/* Mockup Container */}
-        <div className="crm-mockup-wrapper">
+        <div className={`crm-mockup-wrapper ${activeTab}-active`}>
           <div className="mockup-window">
             
             {/* Fixed Sidebar */}
@@ -393,17 +480,169 @@ export default function Features() {
                   </div>
                 )}
                 {activeTab === 'conversas' && (
-                  <div className="conversas-view">
-                    <div className="flow-step" />
-                    <div className="flow-line" />
-                    <div className="flow-step" />
+                  <div className="conversas-view-real">
+                    <aside className="chat-sidebar">
+                      <div className="chat-sidebar-header">
+                        <div className="chat-search-box">
+                          <Plus size={16} />
+                          <span>Nova Conversa</span>
+                        </div>
+                      </div>
+                      <div className="chat-list">
+                        {[
+                          { name: 'Academia Bem Estar', msg: 'Até as 18h! 🏋️‍♂️', time: '09:06', active: true, color: '#10b981' },
+                          { name: 'Circuito Fitness', msg: 'Pode deixar, aviso sim.', time: 'Ontem', color: '#3b82f6' },
+                          { name: 'Chakaruna Store', msg: 'Obrigado pelo retorno!', time: '14/05', color: '#f59e0b' },
+                          { name: 'Studio Move', msg: 'Vou conferir os horários.', time: '12/05', color: '#ef4444' }
+                        ].map((chat, i) => (
+                          <div key={i} className={`chat-item ${chat.active ? 'active' : ''}`}>
+                            <div className="chat-avatar" style={{ backgroundColor: chat.color }}>
+                              {chat.name[0]}
+                            </div>
+                            <div className="chat-info">
+                              <div className="chat-info-top">
+                                <span className="chat-name">{chat.name}</span>
+                                <span className="chat-time">{chat.time}</span>
+                              </div>
+                              <p className="chat-last-msg">{chat.msg}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </aside>
+
+                    <section className="chat-main">
+                      <header className="chat-header">
+                        <div className="chat-header-info">
+                          <div className="chat-avatar" style={{ backgroundColor: '#10b981' }}>A</div>
+                          <div className="chat-header-text">
+                            <h4>Academia Bem Estar</h4>
+                            <div className="chat-status">
+                              <div className="status-dot" />
+                              <span>Mya Ativa • Online</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="chat-header-actions">
+                          <div className="tiny-icon-box"><Users size={14} /></div>
+                          <div className="tiny-icon-box"><Settings size={14} /></div>
+                        </div>
+                      </header>
+
+                      <div className="chat-messages">
+                        <div className="message-bubble user">
+                          <p>Olá! Gostaria de saber os horários de funcionamento da academia hoje.</p>
+                          <span className="message-time">09:00</span>
+                        </div>
+                        <div className="message-bubble bot">
+                          <p>Olá! 😊 Funcionamos hoje das 06h às 22h. Além disso, temos turmas de Crossfit às 18h e 19h.</p>
+                          <span className="message-time">09:01</span>
+                        </div>
+                        <div className="message-bubble bot">
+                          <p>Gostaria de agendar uma aula experimental gratuita para um desses horários?</p>
+                          <span className="message-time">09:01</span>
+                        </div>
+                        <div className="message-bubble user">
+                          <p>Pode ser as 18h! Vou levar um amigo também.</p>
+                          <span className="message-time">09:05</span>
+                        </div>
+                        <div className="message-bubble bot">
+                          <p>Perfeito! Já reservei as duas vagas para as 18h. Estaremos esperando vocês! 🏋️‍♂️</p>
+                          <span className="message-time">09:06</span>
+                        </div>
+                      </div>
+
+                      <footer className="chat-footer">
+                        <div className="chat-input-wrapper">
+                          <input type="text" placeholder="Digite sua resposta..." disabled />
+                          <button className="chat-send-btn">
+                            <Plus size={18} />
+                          </button>
+                        </div>
+                      </footer>
+                    </section>
                   </div>
                 )}
                 {activeTab === 'contatos' && (
-                  <div className="contatos-view">
-                    <div className="chart-large" />
-                    <div className="chart-small" />
-                    <div className="chart-small" />
+                  <div className="contatos-view-real">
+                    <div className="contacts-top-bar">
+                      <div className="search-and-filter">
+                        <div className="mya-search-wrapper">
+                          <Search size={16} />
+                          <input type="text" placeholder="Buscar por nome, telefone..." />
+                        </div>
+                        <div className="mya-select-wrapper">
+                          <select>
+                            <option>Todos</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="contacts-actions">
+                        <button className="mya-secondary-btn">Importar</button>
+                        <button className="mya-secondary-btn">Verificar WhatsApp</button>
+                        <button className="mya-primary-btn">
+                          <Plus size={16} />
+                          Novo contato
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="filters-strip">
+                      <span className="filter-label">Filtro por tag:</span>
+                      <div className="filter-tags-scroll">
+                        {CONTACT_FILTERS.map((filter, idx) => (
+                          <button key={idx} className="filter-tag-pill">
+                            {filter}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="contacts-table-container">
+                      <table className="contacts-table">
+                        <thead>
+                          <tr>
+                            <th className="col-check"><input type="checkbox" readOnly /></th>
+                            <th className="col-name">NOME ▲</th>
+                            <th className="col-phone">TELEFONE</th>
+                            <th className="col-ddd">DDD</th>
+                            <th className="col-tags">TAGS</th>
+                            <th className="col-status">STATUS</th>
+                            <th className="col-last">ÚLTIMO ENVIO</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {CONTACTS_DATA.map((contact) => (
+                            <tr key={contact.id}>
+                              <td><input type="checkbox" readOnly /></td>
+                              <td>
+                                <div className="contact-name-cell">
+                                  <div className="contact-avatar-small" style={{ backgroundColor: contact.color }}>
+                                    {contact.name[0] === '#' ? '?' : contact.name[0]}
+                                  </div>
+                                  <span>{contact.name}</span>
+                                </div>
+                              </td>
+                              <td>{contact.phone}</td>
+                              <td>{contact.ddd}</td>
+                              <td>
+                                <div className="contact-tags-cell">
+                                  {contact.tags.map((tag, tIdx) => (
+                                    <span key={tIdx} className={`tag-pill ${tag.toLowerCase().replace(/ /g, '-')}`}>
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+                              </td>
+                              <td>
+                                <span className="status-pill-optin">{contact.status}</span>
+                              </td>
+                              <td className="last-send-cell">{contact.lastSend}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 )}
               </div>

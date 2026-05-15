@@ -1,0 +1,100 @@
+.wave-marquee-section {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.wave-marquee-wrapper {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  padding-bottom: 20px;
+}
+
+.wave-char {
+  font-family: 'Manrope', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  padding: 0 1px;
+  line-height: 1;
+}
+
+.wave-char.highlight {
+  color: #2563eb;
+  font-weight: 900;
+}
+
+.wave-char.bullet {
+  color: #cbd5e1;
+  margin: 0 40px;
+  font-size: 4rem;
+}
+
+.wave-marquee-section::before,
+.wave-marquee-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wave-marquee-section::before {
+  left: 0;
+  background: linear-gradient(to right, white 20%, transparent);
+}
+
+.wave-marquee-section::after {
+  right: 0;
+  background: linear-gradient(to left, white 20%, transparent);
+}
+
+@media (max-width: 1024px) {
+  .wave-char {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wave-marquee-section {
+    padding: 60px 0;
+  }
+  
+  .wave-char {
+    font-size: 2.2rem;
+  }
+  
+  .wave-char.bullet {
+    margin: 0 20px;
+    font-size: 1.5rem;
+  }
+}
+
+.wave-marquee-section::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.wave-marquee-section::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+@media (max-width: 768px) {
+  .wave-marquee-section {
+    padding: 40px 0;
+  }
+  
+  .wave-char {
+    font-size: 1.5rem;
+  }
+}
