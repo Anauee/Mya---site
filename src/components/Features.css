@@ -264,14 +264,17 @@
 
 @media (max-width: 768px) {
   .mockup-main {
-    padding: 20px 0 20px 20px; /* Bleed to the right edge */
+    padding: 20px 0 20px 20px;
+    /* Bleed to the right edge */
     gap: 15px;
     transform: scale(0.85);
     /* Shrink content to simulate PC view */
     transform-origin: top left;
-    width: 125%; /* More width to allow bleeding */
+    width: 125%;
+    /* More width to allow bleeding */
     /* Compensate for scale */
-    overflow: visible; /* Crucial for bleeding */
+    overflow: visible;
+    /* Crucial for bleeding */
   }
 }
 
@@ -291,11 +294,13 @@
 
 @media (max-width: 768px) {
   .content-header {
-    padding-right: 15px; /* Perfect mobile padding */
+    padding-right: 15px;
+    /* Perfect mobile padding */
   }
 
   .desktop-only {
-    display: none !important; /* Strictly hidden on mobile */
+    display: none !important;
+    /* Strictly hidden on mobile */
   }
 }
 
@@ -319,11 +324,13 @@
   .content-header {
     margin-bottom: 20px;
     gap: 12px;
-    padding-right: 20px; /* Compact mobile padding */
+    padding-right: 20px;
+    /* Compact mobile padding */
   }
 
   .pipeline-column:nth-child(n+4) {
-    display: none; /* Only 3 columns on mobile as requested */
+    display: none;
+    /* Only 3 columns on mobile as requested */
   }
 
   .view-toggle-box button {
@@ -341,7 +348,8 @@
 .content-grid {
   flex: 1;
   width: 100%;
-  overflow: visible; /* Allow content to bleed to the edge */
+  overflow: visible;
+  /* Allow content to bleed to the edge */
 }
 
 .pipeline-view,
@@ -578,7 +586,8 @@
 .pipeline-actions {
   display: flex;
   gap: 12px;
-  flex-shrink: 0; /* Prevent buttons from being crushed */
+  flex-shrink: 0;
+  /* Prevent buttons from being crushed */
   align-items: center;
 }
 
@@ -618,7 +627,7 @@
   margin-bottom: 24px;
 }
 
-.pipeline-actions > * {
+.pipeline-actions>* {
   /* Removed initial opacity to ensure PC visibility */
 }
 
@@ -651,7 +660,8 @@
 }
 
 .pipeline-board {
-  display: flex; /* Switched to flex for better bleed control */
+  display: flex;
+  /* Switched to flex for better bleed control */
   gap: 12px;
   flex: 1;
   overflow-x: auto;
@@ -825,13 +835,16 @@
 
 @media (max-width: 1024px) {
   .pipeline-board {
-    display: flex; /* Restore flex for side-by-side columns */
+    display: flex;
+    /* Restore flex for side-by-side columns */
     gap: 12px;
     overflow-x: auto;
   }
+
   .desktop-only {
     display: none !important;
   }
+
   .pipeline-column {
     min-width: 240px;
   }
@@ -849,7 +862,8 @@
   gap: 16px !important;
   align-items: center !important;
   flex-shrink: 0 !important;
-  z-index: 1001 !important; /* High enough to be over any neblina/fog */
+  z-index: 1001 !important;
+  /* High enough to be over any neblina/fog */
   visibility: visible;
   opacity: 1;
 }
@@ -901,7 +915,9 @@
   .mya-header-actions {
     gap: 8px !important;
   }
-  .mya-toggle-btn, .mya-primary-btn {
+
+  .mya-toggle-btn,
+  .mya-primary-btn {
     padding: 4px 8px !important;
     font-size: 0.75rem !important;
   }
@@ -950,8 +966,8 @@
   background: white !important;
   border-radius: 10px !important;
   padding: 12px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
-  border: 1px solid rgba(0,0,0,0.02) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.02) !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 8px !important;
@@ -969,12 +985,15 @@
     margin-bottom: 16px !important;
     padding-bottom: 12px !important;
   }
+
   .mya-pc-only-header h2 {
     font-size: 1.2rem !important;
   }
+
   .mya-pc-only-header p {
     font-size: 0.75rem !important;
   }
+
   .mya-column {
     min-width: 240px !important;
   }
@@ -984,6 +1003,7 @@
 .mya-new-board::-webkit-scrollbar {
   display: none !important;
 }
+
 .mya-new-board {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
@@ -1007,7 +1027,8 @@
 }
 
 .mya-new-board {
-  overflow-x: hidden !important; /* Remove horizontal scroll as requested */
+  overflow-x: hidden !important;
+  /* Remove horizontal scroll as requested */
 }
 
 /* FINAL REFINED LOOK - 3 COLUMNS & CLOSED WINDOW */
@@ -1045,30 +1066,35 @@
 
 /* RESTORE BLEED LOOK - BUT KEEP CONTENT CONTAINED */
 .mockup-window {
-  border-right: none !important; /* Open the side as requested */
-  overflow: visible !important;  /* Allow content to breathe */
+  border-right: none !important;
+  /* Open the side as requested */
+  overflow: visible !important;
+  /* Allow content to breathe */
   mask-image: none !important;
   -webkit-mask-image: none !important;
 }
 
 .mya-pipeline-full-view {
-  padding-right: 60px !important; /* Extra space to ensure buttons are NOT cut off */
+  padding-right: 60px !important;
+  /* Extra space to ensure buttons are NOT cut off */
 }
 
 .mya-pc-only-header {
-  padding-right: 20px !important; /* Ensure buttons have breathing room from the 'open' edge */
+  padding-right: 20px !important;
+  /* Ensure buttons have breathing room from the 'open' edge */
 }
 
 .mya-header-actions {
-  margin-right: 20px !important; /* Push buttons a bit more to the left so they stay 'dento de quadro' */
+  margin-right: 20px !important;
+  /* Push buttons a bit more to the left so they stay 'dento de quadro' */
 }
 
 /* RESTORE DUAL NEBLINA (FOG) - BOTTOM AND RIGHT */
 .mockup-window {
-  mask-image: 
+  mask-image:
     linear-gradient(to bottom, black 75%, transparent 100%),
     linear-gradient(to right, black 85%, transparent 100%) !important;
-  -webkit-mask-image: 
+  -webkit-mask-image:
     linear-gradient(to bottom, black 75%, transparent 100%),
     linear-gradient(to right, black 85%, transparent 100%) !important;
   mask-composite: intersect !important;
@@ -1096,7 +1122,8 @@
 
 .content-header h2 {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 2.2rem !important; /* Standardized size */
+  font-size: 2.2rem !important;
+  /* Standardized size */
   font-weight: 700 !important;
   color: #0f172a !important;
   margin: 0 !important;
@@ -1110,7 +1137,8 @@
 }
 
 .mya-pipeline-full-view {
-  padding: 40px !important; /* Match mockup-main padding */
+  padding: 40px !important;
+  /* Match mockup-main padding */
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
@@ -1124,7 +1152,8 @@
 
 /* FIX DOUBLE PADDING AND ALIGNMENT */
 .mya-pipeline-full-view {
-  padding: 0 !important; /* REMOVE EXTRA PADDING TO MATCH DASHBOARD EXACTLY */
+  padding: 0 !important;
+  /* REMOVE EXTRA PADDING TO MATCH DASHBOARD EXACTLY */
   margin: 0 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1133,7 +1162,8 @@
 }
 
 .mya-pipeline-header {
-  margin-top: 0 !important; /* Ensure it starts at the very top of mockup-main */
+  margin-top: 0 !important;
+  /* Ensure it starts at the very top of mockup-main */
 }
 
 /* Match the exact position of the Dashboard title */
@@ -1142,23 +1172,161 @@
 }
 
 /* ALLOW GSAP TO CONTROL OPACITY FOR ENTRANCE ANIMATIONS */
-.mya-column, 
-.mya-card, 
-.mya-header-actions > *, 
-.header-titles > * {
-  opacity: 1; /* Removed !important to allow GSAP control */
+.mya-column,
+.mya-card,
+.mya-header-actions>*,
+.header-titles>* {
+  opacity: 1;
+  /* Removed !important to allow GSAP control */
   visibility: visible;
 }
 
 /* PREVENT FLICKER - INITIAL STATE HIDDEN */
-.mya-column, 
-.mya-card, 
-.mya-header-actions > *, 
-.header-titles > * {
-  opacity: 0; /* Start invisible to prevent flicker before GSAP runs */
+.mya-column,
+.mya-card,
+.mya-header-actions>*,
+.header-titles>* {
+  opacity: 0;
+  /* Start invisible to prevent flicker before GSAP runs */
 }
 
 /* REDUCE GAP BETWEEN HEADER AND CONTENT */
 .content-header {
-  margin-bottom: 12px !important; /* SIGNIFICANTLY REDUCED FROM 30px */
+  margin-bottom: 12px !important;
+  /* SIGNIFICANTLY REDUCED FROM 30px */
+}
+
+/* MOBILE TYPOGRAPHY FIXES */
+@media (max-width: 768px) {
+  .content-header {
+    padding: 0 0 6px 0 !important;
+    margin-bottom: 0 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .content-header h2 {
+    font-size: 1.3rem !important;
+    white-space: normal !important;
+    line-height: 1.1 !important;
+    max-width: 90% !important;
+  }
+
+  .content-header p {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    margin-top: 4px !important;
+    white-space: normal !important;
+    max-width: 62% !important;
+    /* Safely within the window bounds even with scaling */
+  }
+
+  .header-titles {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Specific adjustment for Pipeline Header on Mobile */
+  .mya-header-actions {
+    margin-top: 4px !important; /* Reduced to bring them closer */
+    width: 100% !important;
+    justify-content: flex-start !important;
+    margin-right: 0 !important;
+    gap: 8px !important;
+  }
+
+  .mya-toggle-btn {
+    padding: 4px 10px !important;
+    font-size: 0.65rem !important;
+    border-radius: 6px !important;
+  }
+
+  .mya-primary-btn {
+    padding: 5px 12px !important;
+    font-size: 0.65rem !important;
+    border-radius: 6px !important;
+  }
+
+  .mya-toggle-btn svg, .mya-primary-btn svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .mya-toggle-group {
+    border-radius: 8px !important;
+    padding: 3px !important;
+  }
+
+  /* PIPELINE MOBILE SHRINK - ULTRA */
+  .mya-new-board {
+    overflow-x: auto !important;
+    gap: 6px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .mya-column {
+    min-width: 150px !important;
+    padding: 8px !important;
+    gap: 8px !important;
+  }
+
+  .mya-card {
+    padding: 6px !important;
+    gap: 4px !important;
+    border-radius: 8px !important;
+  }
+
+  .card-name {
+    font-size: 0.75rem !important;
+  }
+
+  .card-phone, 
+  .card-tag, 
+  .column-value, 
+  .column-count,
+  .status-badge {
+    font-size: 0.55rem !important;
+  }
+
+  .column-info h4 {
+    font-size: 0.7rem !important;
+  }
+
+  .card-footer-icons {
+    padding-top: 4px !important;
+    margin-top: 0 !important;
+  }
+
+  .tiny-icon-box, .yellow-doc-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .card-val {
+    font-size: 0.7rem !important;
+  }
+
+  /* RE-ENABLE AND ENHANCE SIDE FOG */
+  .mockup-window {
+    mask-image: 
+      linear-gradient(to bottom, black 75%, transparent 100%),
+      linear-gradient(to right, black 60%, transparent 98%) !important;
+    -webkit-mask-image: 
+      linear-gradient(to bottom, black 75%, transparent 100%),
+      linear-gradient(to right, black 60%, transparent 98%) !important;
+  }
+
+  .mockup-fog-right {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 80px !important;
+    background: linear-gradient(to right, transparent, white 90%) !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+  }
 }
