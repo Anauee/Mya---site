@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useId } from 'react';
 import gsap from 'gsap';
 import { CheckCheck, ChevronDown } from 'lucide-react';
 import './Hero.css';
@@ -87,11 +87,15 @@ export default function Hero() {
       ease: "power1.inOut"
     });
 
-    return () => { tl.kill(); };
+    return () => { 
+      tl.kill(); 
+    };
   }, []);
 
   return (
     <section className="hero-section">
+      <div className="hero-glass-background" />
+      
       <div className="container hero-container">
 
         {/* Title Block */}

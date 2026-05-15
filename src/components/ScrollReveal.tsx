@@ -44,7 +44,7 @@ export default function ScrollReveal({ children }: { children: React.ReactNode }
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=100%", 
+        end: "+=150%", // Increased to allow for a pause at the end
         scrub: true,
         pin: true,
         onUpdate: (self) => {
@@ -57,19 +57,23 @@ export default function ScrollReveal({ children }: { children: React.ReactNode }
       }
     });
 
-    // WALL SLIDES UP
+    // WALL SLIDES UP (completes at 66% of the timeline)
     tl.to(firstSection, {
       yPercent: -100,
-      ease: "none"
+      ease: "none",
+      duration: 1
     });
 
     // Subtle parallax reveal for the second section content
     const revealTarget = secondSection.firstElementChild || secondSection;
     tl.fromTo(revealTarget, 
       { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, ease: "none" },
+      { y: 0, opacity: 1, ease: "none", duration: 1 },
       0
     );
+
+    // ADD PAUSE: Keep pined for the remaining 33% of the scroll
+    tl.to({}, { duration: 0.5 });
 
     // Cleanup transition at the end
     ScrollTrigger.create({
