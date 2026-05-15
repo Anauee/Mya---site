@@ -49,6 +49,22 @@ function RollingNumber({ value }: { value: string | number }) {
   );
 }
 
+interface PipelineCard {
+  name: string;
+  phone: string;
+  tags: string[];
+  val?: string;
+  highlight?: string;
+}
+
+interface PipelineColumn {
+  title: string;
+  color: string;
+  value: string;
+  count: number;
+  cards: PipelineCard[];
+}
+
 export default function Features() {
   const [activeTab, setActiveTab] = useState('pipeline');
   const contentRef = useRef<HTMLDivElement>(null);
@@ -431,11 +447,11 @@ export default function Features() {
                     </div>
 
                     <div className="pipeline-board mya-new-board">
-                      {[
+                      {( [
                         { title: 'Lead', color: '#f1f5f9', value: 'R$ 280,00', count: 21, cards: [{ name: 'Alex', phone: '(41) 8834-0534', tags: ['Disparos', 'Não gerado'] }, { name: '4motion academia', phone: '(86) 9438-9166', tags: ['Disparos', 'Não gerado'] }] },
                         { title: 'Reunião agendada', color: '#eff6ff', value: 'R$ 540,00', count: 1, cards: [{ name: 'Studio Fitness', phone: '(11) 98765-4321', tags: ['SDR', 'Reunião'], val: 'R$ 540,00' }] },
                         { title: 'No-Show', color: '#fefce8', value: 'R$ 280,00', count: 3, cards: [{ name: 'Jean Marry', phone: '(98) 98162-3734', tags: ['Google Ads', 'Não gerado'], highlight: '#fee2e2' }] }
-                      ].map((col, idx) => (
+                      ] as PipelineColumn[]).map((col, idx) => (
                         <div key={idx} className="mya-column" style={{ backgroundColor: col.color }}>
                           <div className="column-header">
                             <div className="column-info">
