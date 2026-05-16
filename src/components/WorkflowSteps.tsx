@@ -13,21 +13,24 @@ const STEPS = [
     title: "Disparo Inteligente via WhatsApp",
     subtitle: "AUMENTE SUA TAXA DE CONVERSÃO",
     description: "Inicie conversas de forma automática e personalizada com seus leads. Nossa tecnologia garante que cada mensagem pareça única, aumentando drasticamente o engajamento e garantindo que nenhum lead esfrie. Esqueça disparos genéricos; foque em conexões reais que convertem em vendas.",
-    icon: "📱"
+    icon: "📱",
+    videoUrl: "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/mya-intelligent-dispatch_2026-05-16_15-09-26.mp4"
   },
   {
     id: 2,
     title: "Mya: Sua IA SDR Especialista",
     subtitle: "ATENDIMENTO HUMANO E ESCALÁVEL",
     description: "Uma inteligência artificial treinada especificamente para o seu negócio. A Mya entende objeções, responde dúvidas complexas e qualifica leads em tempo real, 24 horas por dia. Ela não apenas responde, ela conduz o lead até o agendamento, agindo como o melhor vendedor do seu time.",
-    icon: "✨"
+    icon: "✨",
+    videoUrl: "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/mya-sdr-especialista_2026-05-16_15-02-27.mp4"
   },
   {
     id: 3,
     title: "CRM Integrado para Gestão Total",
     subtitle: "CONTROLE ABSOLUTO DO SEU FUNIL",
     description: "Gerencie todo o fluxo de vendas em uma interface intuitiva e poderosa. Acompanhe a jornada de cada cliente, desde o primeiro contato via WhatsApp até o fechamento. Com dados precisos e automações de funil, você terá a visão clara de onde investir para escalar seus resultados.",
-    icon: "📊"
+    icon: "📊",
+    videoUrl: "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/mya-crm-gestao_2026-05-16_14-16-14.mp4"
   }
 ];
 
@@ -132,7 +135,19 @@ const WorkflowSteps: React.FC = () => {
                     className="mockup-image"
                     ref={el => { imagesRef.current[index] = el; }}
                   >
-                    <span className="placeholder-icon">{step.icon}</span>
+                    {step.videoUrl ? (
+                      <video 
+                        src={step.videoUrl}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="step-video"
+                      />
+                    ) : (
+                      <span className="placeholder-icon">{step.icon}</span>
+                    )}
                   </div>
                   <div className="step-wall" />
                 </div>

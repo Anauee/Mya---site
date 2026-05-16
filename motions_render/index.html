@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hyperframes/core/dist/hyperframe.runtime.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hyperframes/shader-transitions/dist/index.global.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #0f172a;
+        --accent: #2563eb;
+        --success: #25D366;
+        --grid-line: rgba(0, 0, 0, 0.08);
+        --font-display: "Manrope", sans-serif;
+        --font-tech: "Quicksand", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .scene-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Technical Grid */
+      .grid-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .grid-line {
+        stroke: var(--grid-line);
+        stroke-width: 1.5;
+        vector-effect: non-scaling-stroke;
+      }
+
+      /* Mya Core */
+      .mya-core {
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle, var(--accent) 0%, transparent 75%);
+        border-radius: 50%;
+        filter: blur(8px);
+        opacity: 0.8;
+      }
+
+      /* WA Bubble */
+      .wa-bubble {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(0, 0, 0, 0.05);
+        border-radius: 16px 16px 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        z-index: 5;
+      }
+
+      /* Lead Nodes */
+      .lead-node {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: #f1f5f9;
+        border: 2px solid #e2e8f0;
+        border-radius: 50%;
+        z-index: 2;
+      }
+
+      /* Highlighter */
+      .highlighter {
+        position: absolute;
+        bottom: 80px;
+        background: #000;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 30px;
+      }
+      .highlighter-text {
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 36px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main" data-composition-id="main" data-width="1920" data-height="1080" data-start="0" data-duration="8">
+      
+      <!-- GRID UNIVERSAL -->
+      <div class="grid-layer">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="gridPattern" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" class="grid-line" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#gridPattern)" />
+        </svg>
+      </div>
+
+      <!-- SCENE 1: The Core (0-2.5s) -->
+      <div class="scene clip" id="s1" data-start="0" data-duration="2.5">
+        <div class="scene-content">
+          <div id="core-1" class="mya-core"></div>
+        </div>
+      </div>
+
+      <!-- SCENE 2: The Dispatch (2.5-5.5s) -->
+      <div class="scene clip" id="s2" data-start="2.5" data-duration="3.0" style="visibility:hidden;">
+        <div class="scene-content" id="s2-container">
+          <div id="core-2" class="mya-core"></div>
+          <!-- Leads -->
+          <div id="lead-1" class="lead-node" style="top: 20%; left: 20%;"></div>
+          <div id="lead-2" class="lead-node" style="top: 15%; left: 75%;"></div>
+          <div id="lead-3" class="lead-node" style="top: 70%; left: 80%;"></div>
+          <div id="lead-4" class="lead-node" style="top: 80%; left: 25%;"></div>
+        </div>
+      </div>
+
+      <!-- SCENE 3: The Result (5.5-8s) -->
+      <div class="scene clip" id="s3" data-start="5.5" data-duration="2.5" style="visibility:hidden;">
+        <div class="scene-content">
+          <div class="highlighter" id="hl">
+            <span class="highlighter-text">AUMENTE SUA CONVERSÃO</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Scene Toggles (REQUIRED for HyperFrames) ---
+      tl.set("#s1", { autoAlpha: 0 }, 2.5);
+      tl.set("#s2", { autoAlpha: 1 }, 2.5);
+      tl.set("#s2", { autoAlpha: 0 }, 5.5);
+      tl.set("#s3", { autoAlpha: 1 }, 5.5);
+
+      // --- SCENE 1: CORE PULSE ---
+      tl.from("#core-1", { scale: 0, opacity: 0, duration: 1, ease: "back.out(1.7)" }, 0.2);
+      tl.to("#core-1", { scale: 1.2, duration: 1.3, repeat: 1, yoyo: true, ease: "sine.inOut" }, 1);
+
+      // --- SCENE 2: DISPATCH ---
+      const leads = ["#lead-1", "#lead-2", "#lead-3", "#lead-4"];
+      leads.forEach((leadId, i) => {
+        // Create Bubble
+        const bubbleId = `bubble-${i}`;
+        const container = document.getElementById('s2-container');
+        const bubble = document.createElement('div');
+        bubble.id = bubbleId;
+        bubble.className = 'wa-bubble';
+        bubble.innerText = '📱';
+        container.appendChild(bubble);
+
+        // Position bubble at core (1920/2 = 960, 1080/2 = 540)
+        tl.set(`#${bubbleId}`, { x: 960 - 40, y: 540 - 30, opacity: 0, scale: 0 }, 2.5);
+
+        // Entrance
+        tl.to(`#${bubbleId}`, { opacity: 1, scale: 1, duration: 0.4 }, 2.6 + (i * 0.2));
+
+        // Travel to Lead
+        const leadEl = document.querySelector(leadId);
+        tl.to(`#${bubbleId}`, { 
+          left: leadEl.offsetLeft + 25 - 40, 
+          top: leadEl.offsetTop + 25 - 30, 
+          duration: 0.8, 
+          ease: "power2.out" 
+        }, 3.0 + (i * 0.2));
+
+        // Impact & Activation
+        tl.to(leadId, { backgroundColor: "#25D366", borderColor: "#25D366", boxShadow: "0 0 25px rgba(37, 211, 102, 0.5)", duration: 0.3 }, 3.6 + (i * 0.2));
+        tl.to(`#${bubbleId}`, { scale: 0, opacity: 0, duration: 0.2 }, 3.7 + (i * 0.2));
+      });
+
+      // --- SCENE 3: HIGHLIGHTER ---
+      tl.from("#hl", { width: 0, duration: 0.8, ease: "expo.inOut" }, 5.7);
+      tl.from(".highlighter-text", { x: -50, opacity: 0, duration: 0.5 }, 6.1);
+      tl.to("#hl", { scale: 1.05, duration: 1.5, repeat: 1, yoyo: true, ease: "sine.inOut" }, 6.5);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -121,7 +121,7 @@
   height: 100%;
   background: #065f46;
   border-radius: 32px;
-  box-shadow: 0 30px 60px rgba(6, 95, 70, 0.2);
+  box-shadow: none;
   z-index: 0;
   overflow: hidden;
   will-change: width, height, border-radius;
