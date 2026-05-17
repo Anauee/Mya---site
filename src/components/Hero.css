@@ -83,7 +83,8 @@
 
 @media (min-width: 1024px) {
   .hero-container {
-    transform: none;
+    transform: translateY(-40px);
+    /* Shifts everything UP towards the header */
   }
 }
 
@@ -122,8 +123,8 @@
 }
 
 .line-one {
-  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
-  /* Slightly increased scale */
+  font-size: clamp(3.6rem, 6.2vw, 5.4rem);
+  /* Scaled up +12.5% */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -133,8 +134,8 @@
 }
 
 .line-two {
-  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
-  /* Slightly increased scale */
+  font-size: clamp(3.6rem, 6.2vw, 5.4rem);
+  /* Scaled up +12.5% */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -198,7 +199,8 @@
   .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Enhanced spacing */
+    gap: 1.5rem;
+    /* Enhanced spacing */
     align-items: center;
     text-align: center;
     margin-top: 0;
@@ -233,8 +235,10 @@
 
 @media (min-width: 1024px) {
   .hero-chat-viewport {
-    max-width: 440px; /* Increased from 380px */
-    height: 315px; /* Increased from 270px */
+    max-width: 500px;
+    /* Scaled up from 440px (+14%) */
+    height: 360px;
+    /* Scaled up from 315px (+14%) */
     margin-top: 0.8rem;
     margin-left: 0;
     justify-self: center;
@@ -320,7 +324,7 @@
     /* Reset composite completely on mobile to prevent desktop's radial mask inheritance */
     mask-composite: unset !important;
     -webkit-mask-composite: unset !important;
-    
+
     /* Apply vertical linear-gradient only */
     mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 85%, transparent 100%) !important;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 29%, rgba(0, 0, 0, 1) 80%, transparent 100%) !important;
@@ -416,18 +420,21 @@
 }
 
 .hero-description {
-  font-size: 1.05rem; /* Increased slightly */
+  font-size: 1.15rem;
+  /* Scaled up baseline (+10%) */
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
-  max-width: 520px; /* Increased from 480px */
+  max-width: 580px;
+  /* Scaled up envelope (+12%) */
   text-align: center;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    /* Scaled up desktop (+8%) */
   }
 }
 
@@ -437,6 +444,51 @@
   gap: 1rem;
   width: 100%;
   max-width: 300px;
+}
+
+.btn-primary {
+  background: var(--btn-color);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 30px;
+  /* Symmetrical radius matching header */
+  font-weight: 600;
+  font-size: 1.15rem;
+  /* Scaled up (+10%) */
+  box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  /* Guaranteed single line text */
+}
+
+.btn-secondary {
+  background: #f4f4f4;
+  padding: 14px 20px;
+  border-radius: 30px;
+  /* Symmetrical radius matching primary */
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 1.15rem;
+  /* Scaled up (+10%) */
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  /* Guaranteed single line text */
 }
 
 @media (min-width: 640px) {
@@ -452,46 +504,11 @@
 
   .btn-primary,
   .btn-secondary {
-    width: 190px; /* Fixed equal width for perfect absolute symmetry */
-    padding: 14px 0; /* Vertical padding only since width is fixed */
+    width: 205px;
+    /* Scaled up fixed width for perfect absolute symmetry */
+    padding: 14px 0;
+    /* Vertical padding only since width is fixed */
   }
-}
-
-.btn-primary {
-  background: var(--btn-color);
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 30px; /* Symmetrical radius matching header */
-  font-weight: 600;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
-  cursor: pointer;
-  border: none;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-secondary {
-  background: #f4f4f4;
-  padding: 14px 20px;
-  border-radius: 30px; /* Symmetrical radius matching primary */
-  font-weight: 500;
-  color: var(--text-color);
-  font-size: 1.05rem;
-  cursor: pointer;
-  border: none;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .scroll-indicator {
