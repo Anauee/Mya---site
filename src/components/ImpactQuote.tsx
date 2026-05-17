@@ -86,13 +86,13 @@ const ImpactQuote: React.FC = () => {
       // Phase 4: Cards invade from below
       tl.fromTo(cardsRef.current,
         { y: "100vh", opacity: 0 },
-        { y: isMobile ? -100 : 0, opacity: 1, duration: 6, ease: "power2.out" }
+        { y: isMobile ? -20 : 0, opacity: 1, duration: 6, ease: "power2.out" }
       );
 
       // Phase 5: Push quote text up to make room (stays visible!)
       tl.to(".quote-container", {
-        y: isMobile ? -20 : -120,
-        scale: isMobile ? 1.1 : 0.95,
+        y: isMobile ? -130 : -120,
+        scale: isMobile ? 0.85 : 0.95,
         duration: 6,
         ease: "power2.out",
       }, "<");
