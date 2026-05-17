@@ -109,7 +109,8 @@
 
 @media (min-width: 1024px) {
   .hero-title-wrapper {
-    margin-bottom: 2.5rem; /* Balanced vertical gap - pulls content block up perfectly */
+    margin-bottom: 2.5rem;
+    /* Balanced vertical gap - pulls content block up perfectly */
   }
 
   .static-line-container {
@@ -123,7 +124,8 @@
 }
 
 .line-one {
-  font-size: clamp(5rem, 10vw, 8.5rem); /* Restored original PC scale */
+  font-size: clamp(5rem, 10vw, 8.5rem);
+  /* Restored original PC scale */
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -133,7 +135,8 @@
 }
 
 .line-two {
-  font-size: clamp(5rem, 10vw, 8.5rem); /* Restored original PC scale */
+  font-size: clamp(5rem, 10vw, 8.5rem);
+  /* Restored original PC scale */
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -198,8 +201,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start; /* Aligned back to the top as requested */
-    gap: 7rem; /* Extremely generous premium horizontal spacing */
+    align-items: flex-start;
+    /* Aligned back to the top as requested */
+    gap: 8rem;
+    /* Increased horizontal gap for luxurious separation */
     margin-top: 0;
   }
 }
@@ -408,9 +413,11 @@
   .hero-copy {
     align-items: flex-start;
     margin-right: 0;
-    transform: none;
+    transform: translateY(-15px);
+    /* Pulls ONLY the text block upward */
     order: 1;
-    gap: 1.8rem; /* Elegant breathing space between description and CTAs */
+    gap: 1.8rem;
+    /* Elegant breathing space between description and CTAs */
   }
 }
 
@@ -432,8 +439,10 @@
   .hero-description {
     text-align: left;
     margin: 0;
-    font-size: 1.25rem; /* Increased size to make it readable and premium */
-    max-width: 520px; /* Wider envelope for natural text wrapping */
+    font-size: 1.25rem;
+    /* Increased size to make it readable and premium */
+    max-width: 520px;
+    /* Wider envelope for natural text wrapping */
     line-height: 1.5;
   }
 }
