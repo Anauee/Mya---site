@@ -180,6 +180,7 @@
     position: absolute;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    margin: 0 !important; /* Overrides GSAP inline margin to prevent right-shift */
   }
 }
 
