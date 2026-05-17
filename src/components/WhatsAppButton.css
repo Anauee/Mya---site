@@ -18,47 +18,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 62px;
-  height: 62px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: #25d366; /* Flat, clean, minimalist green */
   color: #ffffff;
-  box-shadow: 0 8px 30px rgba(18, 140, 126, 0.35);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: none; /* Removed thick border for clean minimalism */
 }
 
 .whatsapp-icon {
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hover effects */
 .whatsapp-btn:hover {
-  transform: scale(1.12) rotate(8deg);
-  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
-  background: linear-gradient(135deg, #2ae06f 0%, #15a393 100%);
-}
-
-.whatsapp-btn:hover .whatsapp-icon {
-  transform: scale(1.05);
+  transform: scale(1.08); /* Clean, modern scale-only lifting */
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+  background: #22c05b; /* Soft dark-green transition */
 }
 
 /* Active click shrink */
 .whatsapp-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 /* Continuous Pulse Rings */
 .whatsapp-pulse-ring {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 50%;
-  border: 2px solid #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.45); /* Thinner, more elegant, elite ring */
   opacity: 0;
   pointer-events: none;
 }
@@ -186,12 +184,12 @@
   .whatsapp-btn {
     width: 54px;
     height: 54px;
-    box-shadow: 0 6px 20px rgba(18, 140, 126, 0.3);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
   }
 
   .whatsapp-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .whatsapp-tooltip {
