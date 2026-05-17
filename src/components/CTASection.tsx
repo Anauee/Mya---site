@@ -23,7 +23,7 @@ const CTASection: React.FC = () => {
     if (!containerRef.current || !anchorCardRef.current || !sellCardRef.current || !sellBgRef.current || !sellOverlayRef.current) return;
 
     const ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
+      const mm = gsap.matchMedia();
 
       // --- DESKTOP ANIMATION ---
       mm.add("(min-width: 769px)", () => {
