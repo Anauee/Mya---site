@@ -194,8 +194,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    gap: 3.5rem;
+    align-items: center; /* Vertically centered for perfect balanced alignment */
+    gap: 5.5rem; /* Elegant premium spacing between image and copy */
     margin-top: 0;
   }
 }
@@ -406,7 +406,7 @@
     margin-right: 0;
     transform: none;
     order: 1;
-    gap: 1.5rem;
+    gap: 1.8rem; /* Elegant breathing space between description and CTAs */
   }
 }
 
@@ -428,7 +428,9 @@
   .hero-description {
     text-align: left;
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.25rem; /* Increased size to make it readable and premium */
+    max-width: 520px; /* Wider envelope for natural text wrapping */
+    line-height: 1.5;
   }
 }
 
