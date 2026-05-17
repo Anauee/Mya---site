@@ -108,6 +108,10 @@
 }
 
 @media (min-width: 1024px) {
+  .hero-title-wrapper {
+    margin-bottom: 4rem; /* Generous vertical gap to avoid any collision with content */
+  }
+
   .static-line-container {
     margin-left: -18rem;
   }
@@ -194,8 +198,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; /* Vertically centered for perfect balanced alignment */
-    gap: 5.5rem; /* Elegant premium spacing between image and copy */
+    align-items: flex-end; /* Grounded to the bottom to match mockup baseline and clear the title */
+    gap: 7rem; /* Extremely generous premium horizontal spacing */
     margin-top: 0;
   }
 }
