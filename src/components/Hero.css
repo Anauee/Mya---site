@@ -429,7 +429,7 @@
 @media (max-width: 1023px) {
   .hero-description {
     max-width: 340px; /* Expands the text boundary, letting it spill more to the sides */
-    font-size: 17px; /* Increased font-size by 2px for better readability */
+    font-size: 16px; /* Decreased font-size by 1px for optimal balance */
     line-height: 1.5;
   }
 }
