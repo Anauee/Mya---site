@@ -22,10 +22,7 @@
 
 @media (min-width: 1024px) {
   .hero-section {
-    padding-top: 80px;
-    height: 100vh;
-    justify-content: center;
-    padding-bottom: 20px;
+    padding-top: 170px;
   }
 }
 
@@ -83,13 +80,12 @@
 
 @media (min-width: 1024px) {
   .hero-container {
-    transform: translateX(clamp(2.5rem, 2.5vw, 4.5rem)) translateY(-20px);
-    /* Perfect side-by-side balanced translation and height elevation */
+    transform: translateX(clamp(2.5rem, 2.5vw, 4.5rem));
   }
 }
 
 .hero-title-wrapper {
-  margin-top: 10px; /* Added px unit to make it valid */
+  margin-top: 0;
   margin-bottom: 1.5rem;
   /* Reduced margin */
   width: 100%;
@@ -113,20 +109,19 @@
 
 @media (min-width: 1024px) {
   .static-line-container {
-    margin-left: 0;
+    margin-left: -18rem;
   }
 
   .animated-line-container {
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 18rem;
+    margin-top: -1rem;
   }
 }
 
 .line-one {
-  font-size: clamp(3.4rem, 5.8vw, 5.1rem); /* Perfect intermediate scale synced with line-two */
-  /* Perfect intermediate scale */
+  font-size: clamp(5rem, 10vw, 8.5rem); /* Restored original PC scale */
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--text-color);
   margin: 0;
@@ -134,10 +129,9 @@
 }
 
 .line-two {
-  font-size: clamp(3.4rem, 5.8vw, 5.1rem);
-  /* Perfect intermediate scale */
+  font-size: clamp(5rem, 10vw, 8.5rem); /* Restored original PC scale */
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -0.03em;
   color: var(--text-color);
   white-space: nowrap;
@@ -234,8 +228,8 @@
 
 @media (min-width: 1024px) {
   .hero-chat-viewport {
-    max-width: 470px; /* Perfect intermediate scale */
-    height: 338px; /* Perfect intermediate scale */
+    max-width: 490px;
+    height: 360px;
     margin-top: 0.1rem;
     margin-left: -8rem;
     justify-self: center;
@@ -417,18 +411,16 @@
 }
 
 .hero-description {
-  font-size: 1.10rem; /* Perfect intermediate scale */
+  font-size: 1.1rem;
   font-weight: 400;
   color: var(--text-muted);
-  line-height: 1.5;
-  max-width: 550px; /* Perfect intermediate envelope */
-  text-align: center;
-  margin: 0 auto;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
 @media (min-width: 768px) {
   .hero-description {
-    font-size: 1.30rem; /* Perfect intermediate scale */
+    font-size: 1.25rem;
   }
 }
 
@@ -436,6 +428,7 @@
   .hero-description {
     text-align: left;
     margin: 0;
+    font-size: 1.1rem;
   }
 }
 
@@ -450,11 +443,10 @@
 .btn-primary {
   background: var(--btn-color);
   color: #fff;
-  padding: 14px 20px;
-  border-radius: 30px;
-  /* Symmetrical radius matching header */
+  padding: 16px 34px;
+  border-radius: 40px;
   font-weight: 600;
-  font-size: 1.10rem; /* Perfect intermediate scale */
+  font-size: 1.05rem;
   box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
   cursor: pointer;
   border: none;
@@ -466,17 +458,15 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  /* Guaranteed single line text */
 }
 
 .btn-secondary {
   background: #f4f4f4;
-  padding: 14px 20px;
+  padding: 12px 24px;
   border-radius: 30px;
-  /* Symmetrical radius matching primary */
   font-weight: 500;
   color: var(--text-color);
-  font-size: 1.10rem; /* Perfect intermediate scale */
+  font-size: 1rem;
   cursor: pointer;
   border: none;
   text-align: center;
@@ -487,7 +477,6 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  /* Guaranteed single line text */
 }
 
 @media (min-width: 640px) {
@@ -495,26 +484,6 @@
     flex-direction: row;
     max-width: none;
     width: auto;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    margin: 0 auto;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 198px; /* Perfect intermediate width for absolute symmetry */
-    padding: 14px 0;
-    /* Vertical padding only since width is fixed */
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-actions {
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-self: flex-start;
-    margin: 0;
   }
 }
 
