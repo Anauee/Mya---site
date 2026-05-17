@@ -89,7 +89,7 @@
 }
 
 .hero-title-wrapper {
-  margin-top: 0;
+  margin-top: 10px; /* Added px unit to make it valid */
   margin-bottom: 1.5rem;
   /* Reduced margin */
   width: 100%;
@@ -123,7 +123,7 @@
 }
 
 .line-one {
-  font-size: clamp(3.6rem, 6.2vw, 5.4rem);
+  font-size: clamp(3.4rem, 5.8vw, 5.1rem); /* Perfect intermediate scale synced with line-two */
   /* Perfect intermediate scale */
   font-weight: 400;
   line-height: 1.1;
