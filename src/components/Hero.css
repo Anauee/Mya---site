@@ -83,8 +83,8 @@
 
 @media (min-width: 1024px) {
   .hero-container {
-    transform: translateY(-20px);
-    /* Shifts everything to the perfect intermediate vertical position */
+    transform: translateX(clamp(2.5rem, 2.5vw, 4.5rem)) translateY(-20px);
+    /* Perfect side-by-side balanced translation and height elevation */
   }
 }
 
@@ -197,12 +197,11 @@
 
 @media (min-width: 1024px) {
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    /* Enhanced spacing */
-    align-items: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: flex-start;
+    text-align: left;
     margin-top: 0;
   }
 }
@@ -235,14 +234,12 @@
 
 @media (min-width: 1024px) {
   .hero-chat-viewport {
-    max-width: 470px;
-    /* Perfect intermediate scale */
-    height: 338px;
-    /* Perfect intermediate scale */
-    margin-top: 0.8rem;
-    margin-left: 0;
+    max-width: 470px; /* Perfect intermediate scale */
+    height: 338px; /* Perfect intermediate scale */
+    margin-top: 0.1rem;
+    margin-left: -8rem;
     justify-self: center;
-    order: 2;
+    order: 0;
   }
 }
 
@@ -411,30 +408,34 @@
 
 @media (min-width: 1024px) {
   .hero-copy {
-    align-items: center;
-    margin-right: 0;
-    transform: none;
-    order: 1;
-    gap: 1rem;
+    align-items: flex-start;
+    margin-right: 5rem;
+    transform: translateX(clamp(1.5rem, 1.5vw, 2.75rem));
+    order: 0;
+    gap: 1.5rem;
   }
 }
 
 .hero-description {
-  font-size: 1.10rem;
-  /* Perfect intermediate scale */
+  font-size: 1.10rem; /* Perfect intermediate scale */
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
-  max-width: 550px;
-  /* Perfect intermediate envelope */
+  max-width: 550px; /* Perfect intermediate envelope */
   text-align: center;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .hero-description {
-    font-size: 1.30rem;
-    /* Perfect intermediate scale */
+    font-size: 1.30rem; /* Perfect intermediate scale */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-description {
+    text-align: left;
+    margin: 0;
   }
 }
 
@@ -453,8 +454,7 @@
   border-radius: 30px;
   /* Symmetrical radius matching header */
   font-weight: 600;
-  font-size: 1.10rem;
-  /* Perfect intermediate scale */
+  font-size: 1.10rem; /* Perfect intermediate scale */
   box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
   cursor: pointer;
   border: none;
@@ -476,8 +476,7 @@
   /* Symmetrical radius matching primary */
   font-weight: 500;
   color: var(--text-color);
-  font-size: 1.10rem;
-  /* Perfect intermediate scale */
+  font-size: 1.10rem; /* Perfect intermediate scale */
   cursor: pointer;
   border: none;
   text-align: center;
@@ -504,10 +503,18 @@
 
   .btn-primary,
   .btn-secondary {
-    width: 198px;
-    /* Perfect intermediate width for absolute symmetry */
+    width: 198px; /* Perfect intermediate width for absolute symmetry */
     padding: 14px 0;
     /* Vertical padding only since width is fixed */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-actions {
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin: 0;
   }
 }
 
