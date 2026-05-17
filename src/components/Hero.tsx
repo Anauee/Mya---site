@@ -209,7 +209,7 @@ export default function Hero() {
           {/* RIGHT: Copy & CTA */}
           <div className="hero-copy">
             <p className="hero-description">
-              Com a Mya, você pode construir agentes de IA que planejam, agem e colaboram de forma mais efetiva. Escale suas vendas sem aumentar sua equipe.
+              Com a Mya, você pode construir agentes de IA que planejam, agem e colaboram de forma mais efetiva. <br className="hidden lg:block" /> Escale suas vendas sem aumentar sua equipe.
             </p>
             <div className="hero-actions">
               <a href="#pricing" className="btn-primary">Start building</a>
