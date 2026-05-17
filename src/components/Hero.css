@@ -426,6 +426,14 @@
   max-width: 500px;
 }
 
+@media (max-width: 1023px) {
+  .hero-description {
+    max-width: 290px; /* Tightens paragraph margins on mobile for balanced layout */
+    font-size: 0.95rem; /* Sized down slightly for legibility and fitting */
+    line-height: 1.5;
+  }
+}
+
 @media (min-width: 768px) {
   .hero-description {
     font-size: 1.25rem;
