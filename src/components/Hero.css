@@ -83,8 +83,8 @@
 
 @media (min-width: 1024px) {
   .hero-container {
-    transform: translateY(-40px);
-    /* Shifts everything UP towards the header */
+    transform: translateY(-20px);
+    /* Shifts everything to the perfect intermediate vertical position */
   }
 }
 
@@ -124,7 +124,7 @@
 
 .line-one {
   font-size: clamp(3.6rem, 6.2vw, 5.4rem);
-  /* Scaled up +12.5% */
+  /* Perfect intermediate scale */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -134,8 +134,8 @@
 }
 
 .line-two {
-  font-size: clamp(3.6rem, 6.2vw, 5.4rem);
-  /* Scaled up +12.5% */
+  font-size: clamp(3.4rem, 5.8vw, 5.1rem);
+  /* Perfect intermediate scale */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -235,10 +235,10 @@
 
 @media (min-width: 1024px) {
   .hero-chat-viewport {
-    max-width: 500px;
-    /* Scaled up from 440px (+14%) */
-    height: 360px;
-    /* Scaled up from 315px (+14%) */
+    max-width: 470px;
+    /* Perfect intermediate scale */
+    height: 338px;
+    /* Perfect intermediate scale */
     margin-top: 0.8rem;
     margin-left: 0;
     justify-self: center;
@@ -420,21 +420,21 @@
 }
 
 .hero-description {
-  font-size: 1.15rem;
-  /* Scaled up baseline (+10%) */
+  font-size: 1.10rem;
+  /* Perfect intermediate scale */
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
-  max-width: 580px;
-  /* Scaled up envelope (+12%) */
+  max-width: 550px;
+  /* Perfect intermediate envelope */
   text-align: center;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .hero-description {
-    font-size: 1.35rem;
-    /* Scaled up desktop (+8%) */
+    font-size: 1.30rem;
+    /* Perfect intermediate scale */
   }
 }
 
@@ -453,8 +453,8 @@
   border-radius: 30px;
   /* Symmetrical radius matching header */
   font-weight: 600;
-  font-size: 1.15rem;
-  /* Scaled up (+10%) */
+  font-size: 1.10rem;
+  /* Perfect intermediate scale */
   box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
   cursor: pointer;
   border: none;
@@ -476,8 +476,8 @@
   /* Symmetrical radius matching primary */
   font-weight: 500;
   color: var(--text-color);
-  font-size: 1.15rem;
-  /* Scaled up (+10%) */
+  font-size: 1.10rem;
+  /* Perfect intermediate scale */
   cursor: pointer;
   border: none;
   text-align: center;
@@ -504,8 +504,8 @@
 
   .btn-primary,
   .btn-secondary {
-    width: 205px;
-    /* Scaled up fixed width for perfect absolute symmetry */
+    width: 198px;
+    /* Perfect intermediate width for absolute symmetry */
     padding: 14px 0;
     /* Vertical padding only since width is fixed */
   }
