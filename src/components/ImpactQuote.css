@@ -14,11 +14,29 @@
 }
 
 .quote-container {
-  max-width: 1000px;
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 3;
+  margin: 0 auto;
+}
+
+@media (min-width: 1025px) {
+  .quote-container {
+    max-width: 860px; /* Slightly narrower on PC (down from 1000px) for tight premium formatting */
+  }
+}
+
+@media (max-width: 1024px) {
+  .quote-container {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-container {
+    max-width: 100%;
+  }
 }
 
 .quote-text {
