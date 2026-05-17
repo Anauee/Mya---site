@@ -428,9 +428,9 @@
 
 @media (max-width: 1023px) {
   .hero-description {
-    max-width: 240px; /* Narrower container to increase side boundaries/margins */
-    font-size: 0.85rem; /* Reduced font size for refined text formatting */
-    line-height: 1.6;
+    max-width: 340px; /* Expands the text boundary, letting it spill more to the sides */
+    font-size: 17px; /* Increased font-size by 2px for better readability */
+    line-height: 1.5;
   }
 }
 
