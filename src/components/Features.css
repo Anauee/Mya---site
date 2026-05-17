@@ -2002,8 +2002,21 @@
   }
 
   .contacts-table-container {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden !important; /* Completely removes horizontal scroll */
+    overflow-y: hidden !important; /* Completely removes vertical scroll */
+    pointer-events: none !important; /* Prevents dragging/scrolling completely on mobile */
+  }
+
+  /* Hide columns to fit 100% width on mobile without overflow */
+  .contacts-table .col-check,
+  .contacts-table .col-ddd,
+  .contacts-table .col-status,
+  .contacts-table .col-last,
+  .contacts-table td:nth-child(1),
+  .contacts-table td:nth-child(4),
+  .contacts-table td:nth-child(6),
+  .contacts-table td:nth-child(7) {
+    display: none !important;
   }
 
   .contacts-table th, 
@@ -2012,9 +2025,24 @@
     font-size: 0.7rem !important;
   }
 
-  .contact-avatar-small {
-    width: 20px !important;
-    height: 20px !important;
-    font-size: 0.55rem !important;
+  /* Replace table solid boundaries with dashed strokes */
+  .contacts-table tbody tr,
+  .contacts-table thead th {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* Remove internal borders from navigation grid tabs, replacing with elegant dashes */
+  .tabs-grid {
+    border-top: 1px dashed rgba(0, 0, 0, 0.08) !important;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .tab-item {
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .tab-item:nth-child(n+3) {
+    border-bottom: none !important;
   }
 }

@@ -195,9 +195,29 @@
     gap: 32px;
   }
 
+  .footer-left {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-brand {
+    justify-content: center !important;
+  }
+
+  .copyright {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  .footer-socials {
+    justify-content: center !important;
+  }
+
   .footer-right {
     flex-wrap: wrap;
     gap: 24px;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .footer-main {
@@ -214,12 +234,17 @@
 
   .footer-bottom {
     margin-top: 40px;
-    padding-top: 1.5px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1) !important; /* Elegant dashed stroke instead of solid line */
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .footer-tag {
     font-size: 0.65rem;
     letter-spacing: 0.05em;
-    margin-bottom: 43px;
+    margin-bottom: 20px;
+    text-align: center !important;
   }
 }
