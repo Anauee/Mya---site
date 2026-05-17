@@ -107,7 +107,7 @@ const WorkflowSteps: React.FC = () => {
   }, []);
 
   return (
-    <section className="workflow-section" ref={sectionRef}>
+    <section className="workflow-section" id="work" ref={sectionRef}>
       <div className="workflow-container">
         
         {/* Timeline Rail */}

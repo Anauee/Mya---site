@@ -257,7 +257,7 @@ export default function Features() {
   }, [activeTab]);
 
   return (
-    <section className="features-section">
+    <section className="features-section" id="about">
       <div className="container features-container">
         
         {/* Integrated Grid Navigation */}

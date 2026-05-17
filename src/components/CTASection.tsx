@@ -184,7 +184,7 @@ const CTASection: React.FC = () => {
   }, []);
 
   return (
-    <section className="cta-full-section" ref={containerRef}>
+    <section className="cta-full-section" id="cta" ref={containerRef}>
       <div className="cta-cards-wrapper">
 
         {/* Anchor Card */}

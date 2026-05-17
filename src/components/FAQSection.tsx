@@ -40,7 +40,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <div className="faq-container">
         <div className="faq-header">
           <div className="faq-icon-wrapper">

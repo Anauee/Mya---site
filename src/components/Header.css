@@ -174,3 +174,11 @@
 .full-menu, .menu-close, .menu-links {
   display: none;
 }
+
+@media (min-width: 769px) {
+  .desktop-links {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
