@@ -176,7 +176,7 @@
 }
 
 @media (min-width: 769px) {
-  .desktop-links {
+  .header-main:not(.scrolled) .desktop-links {
     position: absolute;
     left: 50% !important;
     transform: translateX(-50%) !important;

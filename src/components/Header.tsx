@@ -201,7 +201,7 @@ export default function Header() {
   }, [isExpanded, isScrolled, isMobile]);
 
   return (
-    <header className="header-main" ref={containerRef}>
+    <header className={`header-main ${isScrolled ? 'scrolled' : ''}`} ref={containerRef}>
       <nav className="nav-container" ref={navRef}>
         <span 
           className="glass-frost-layer" 
