@@ -35,7 +35,7 @@
 
 @media (max-width: 768px) {
   .quote-container {
-    max-width: 260px; /* Narrower sides for beautiful centered mobile layout as drawn */
+    max-width: 310px; /* Increased from 260px to keep it elegant but avoid being too squeezed */
   }
 }
 
