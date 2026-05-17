@@ -260,7 +260,7 @@
 
 @media (max-width: 768px) {
   .quote-word {
-    font-size: 1.45rem;
+    font-size: 1.3rem; /* Decreased slightly for a more balanced and elegant layout */
     line-height: 1.35;
   }
 
