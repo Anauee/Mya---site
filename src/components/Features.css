@@ -384,6 +384,8 @@
   flex-direction: column;
   gap: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 .stat-label {
@@ -452,6 +454,8 @@
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 .chart-title {
@@ -731,6 +735,8 @@
   gap: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 .card-top-info {
@@ -974,6 +980,8 @@
   gap: 8px !important;
   opacity: 1;
   visibility: visible;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 .red-tag {

@@ -63,6 +63,8 @@
   z-index: 2;
   opacity: 0;
   padding: 20px 0;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 /* Marquee */
@@ -106,6 +108,8 @@
   flex-shrink: 0;
   position: relative;
   transition: box-shadow 0.4s ease;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .testimonial-card:hover {

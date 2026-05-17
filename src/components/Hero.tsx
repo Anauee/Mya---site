@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useId } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CheckCheck, ChevronDown } from 'lucide-react';
 import './Hero.css';
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 const roles = ["SDR", "vendedor", "atendente"];
+const HERO_VIDEO_URL = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video1.mp4";
+const HERO_VIDEO_SCROLL_DISTANCE = "+=35%";
 
 const MESSAGES = [
   { type: 'bot', text: 'Olá! Eu sou a Mya, sua atendente virtual. Como posso te ajudar hoje?', time: '14:00' },
@@ -17,8 +24,10 @@ const MSG_HEIGHT = 100; // Increased from 90 to match new padding and font size
 
 export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
   const secondLineRef = useRef<HTMLDivElement>(null);
   const innerChatRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
 
   // Title rotation
@@ -92,8 +101,63 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+
+    if (!section || !video) return;
+
+    let scrubTween: gsap.core.Tween | null = null;
+
+    const setupVideoScrub = () => {
+      scrubTween?.kill();
+
+      if (!video.duration || Number.isNaN(video.duration)) return;
+
+      video.pause();
+      video.currentTime = 0;
+
+      const playhead = { time: 0 };
+
+      scrubTween = gsap.to(playhead, {
+        time: Math.max(video.duration - 0.05, 0),
+        ease: "none",
+        onUpdate: () => {
+          if (video.readyState >= 2) {
+            video.currentTime = playhead.time;
+          }
+        },
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: HERO_VIDEO_SCROLL_DISTANCE,
+          scrub: 0.35,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      ScrollTrigger.refresh();
+    };
+
+    const handleLoadedMetadata = () => {
+      setupVideoScrub();
+    };
+
+    if (video.readyState >= 1) {
+      setupVideoScrub();
+    } else {
+      video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    }
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      scrubTween?.scrollTrigger?.kill();
+      scrubTween?.kill();
+    };
+  }, []);
+
   return (
-    <section className="hero-section">
+    <section className="hero-section" ref={sectionRef}>
       <div className="hero-glass-background" />
       
       <div className="container hero-container">
@@ -116,7 +180,18 @@ export default function Hero() {
 
           {/* LEFT: Chat Push-Up */}
           <div className="hero-chat-viewport">
-            <div className="hero-chat-inner" ref={innerChatRef}>
+            <div className="hero-scroll-video-layer">
+              <video
+                ref={videoRef}
+                className="hero-scroll-video"
+                src={HERO_VIDEO_URL}
+                muted
+                playsInline
+                preload="auto"
+              />
+            </div>
+
+            <div className="hero-chat-inner hero-chat-inner--hidden" ref={innerChatRef} aria-hidden="true">
               {MESSAGES.map((msg, i) => (
                 <div key={i} className={`floating-msg ${msg.type === 'user' ? 'user-message' : 'bot-message'}`}>
                   <p>{msg.text}</p>
@@ -152,4 +227,3 @@ export default function Hero() {
     </section>
   );
 }
-

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useTransition } from 'react';
 import gsap from 'gsap';
 import { BarChart2, Users, MessageSquare, Megaphone, UserCheck, Layers, Settings, ChevronLeft, Plus, BarChart, Search, Filter } from 'lucide-react';
 import './Features.css';
@@ -67,7 +67,14 @@ interface PipelineColumn {
 
 export default function Features() {
   const [activeTab, setActiveTab] = useState('pipeline');
+  const [isPending, startTransition] = useTransition();
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleTabChange = (tabId: string) => {
+    startTransition(() => {
+      setActiveTab(tabId);
+    });
+  };
 
   useEffect(() => {
     console.log("Current active tab:", activeTab);
@@ -259,7 +266,7 @@ export default function Features() {
             <button
               key={session.id}
               className={`tab-item ${activeTab === session.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(session.id)}
+              onClick={() => handleTabChange(session.id)}
             >
               <span className="tab-label">{session.label}</span>
               {activeTab === session.id && <div className="tab-active-line" />}
@@ -279,6 +286,8 @@ export default function Features() {
                     src="https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/sai-crm.png" 
                     alt="SAI CRM" 
                     className="sidebar-logo-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <span className="sidebar-brand-text">CRM</span>
                 </div>
@@ -286,15 +295,15 @@ export default function Features() {
               </div>
               
               <div className="sidebar-nav">
-                <div className={`nav-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
+                <div className={`nav-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => handleTabChange('dashboard')}>
                   <BarChart2 size={18} />
                   <span>Dashboard</span>
                 </div>
-                <div className={`nav-item ${activeTab === 'contatos' ? 'active' : ''}`} onClick={() => setActiveTab('contatos')}>
+                <div className={`nav-item ${activeTab === 'contatos' ? 'active' : ''}`} onClick={() => handleTabChange('contatos')}>
                   <Users size={18} />
                   <span>Contatos</span>
                 </div>
-                <div className={`nav-item ${activeTab === 'conversas' ? 'active' : ''}`} onClick={() => setActiveTab('conversas')}>
+                <div className={`nav-item ${activeTab === 'conversas' ? 'active' : ''}`} onClick={() => handleTabChange('conversas')}>
                   <MessageSquare size={18} />
                   <span>Conversas</span>
                 </div>
@@ -306,7 +315,7 @@ export default function Features() {
                   <UserCheck size={18} />
                   <span>Clientes</span>
                 </div>
-                <div className={`nav-item ${activeTab === 'pipeline' ? 'active' : ''}`} onClick={() => setActiveTab('pipeline')}>
+                <div className={`nav-item ${activeTab === 'pipeline' ? 'active' : ''}`} onClick={() => handleTabChange('pipeline')}>
                   <Layers size={18} />
                   <span>Pipeline</span>
                 </div>

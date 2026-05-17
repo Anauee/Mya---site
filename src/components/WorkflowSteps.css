@@ -36,6 +36,7 @@
   height: 0%;
   background: #0d7590;
   box-shadow: 0 0 15px rgba(13, 117, 144, 0.3);
+  will-change: height;
 }
 
 .workflow-block {
@@ -105,6 +106,8 @@
   width: 100%;
   max-width: 550px;
   position: relative;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 .mockup-image {

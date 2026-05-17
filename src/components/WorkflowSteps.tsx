@@ -142,7 +142,7 @@ const WorkflowSteps: React.FC = () => {
                         loop
                         muted
                         playsInline
-                        preload="auto"
+                        preload="metadata"
                         className="step-video"
                       />
                     ) : (

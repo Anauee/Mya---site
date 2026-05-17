@@ -26,7 +26,7 @@
   flex-direction: column;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translate3d(0, 0, 0);
   will-change: transform, opacity, left, right, width, height, top;
 }
 
@@ -125,6 +125,7 @@
   z-index: 0;
   overflow: hidden;
   will-change: width, height, border-radius;
+  transform: translate3d(0, 0, 0);
 }
 
 .sell-video-bg {
