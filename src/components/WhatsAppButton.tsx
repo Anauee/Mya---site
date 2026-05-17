@@ -24,7 +24,6 @@ export default function WhatsAppButton() {
       {showTooltip && (
         <div className="whatsapp-tooltip">
           <div className="whatsapp-tooltip-content">
-            <span className="tooltip-avatar">🤖</span>
             <div className="tooltip-text-wrapper">
               <span className="tooltip-title">Mya AI</span>
               <span className="tooltip-desc">Online! Fale conosco agora</span>

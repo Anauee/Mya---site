@@ -29,13 +29,13 @@
 
 @media (max-width: 1024px) {
   .quote-container {
-    max-width: 680px;
+    max-width: 520px; /* Tighter layout for tablet */
   }
 }
 
 @media (max-width: 768px) {
   .quote-container {
-    max-width: 100%;
+    max-width: 260px; /* Narrower sides for beautiful centered mobile layout as drawn */
   }
 }
 
