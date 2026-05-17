@@ -212,7 +212,7 @@ export default function Hero() {
               Com a Mya, você pode construir agentes de IA que planejam, agem e colaboram de forma mais efetiva. Escale suas vendas sem aumentar sua equipe.
             </p>
             <div className="hero-actions">
-              <a href="#cta" className="btn-primary">Start building</a>
+              <a href="#pricing" className="btn-primary">Start building</a>
               <a href="#about" className="btn-secondary">Contact sales</a>
             </div>
           </div>

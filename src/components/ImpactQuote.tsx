@@ -106,7 +106,7 @@ const ImpactQuote: React.FC = () => {
   }, []);
 
   return (
-    <section className="impact-quote-section" ref={sectionRef}>
+    <section className="impact-quote-section" id="testimonials" ref={sectionRef}>
       <div className="quote-container">
         <h2 className="quote-text" ref={textRef}>
           {words.map((word, i) => (
