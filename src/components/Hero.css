@@ -22,9 +22,9 @@
 
 @media (min-width: 1024px) {
   .hero-section {
-    padding-top: 90px;
+    padding-top: 110px; /* Start exactly below header links */
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     padding-bottom: 20px;
   }
 }
@@ -122,8 +122,8 @@
 }
 
 .line-one {
-  font-size: clamp(3rem, 5vw, 4.2rem);
-  /* Compacted for 100vh fold */
+  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+  /* Slightly increased scale */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -133,8 +133,8 @@
 }
 
 .line-two {
-  font-size: clamp(3rem, 5vw, 4.2rem);
-  /* Compacted for 100vh fold */
+  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+  /* Slightly increased scale */
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -198,7 +198,7 @@
   .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem; /* Enhanced spacing */
     align-items: center;
     text-align: center;
     margin-top: 0;
@@ -233,9 +233,9 @@
 
 @media (min-width: 1024px) {
   .hero-chat-viewport {
-    max-width: 380px;
-    height: 270px;
-    margin-top: 0.5rem;
+    max-width: 440px; /* Increased from 380px */
+    height: 315px; /* Increased from 270px */
+    margin-top: 0.8rem;
     margin-left: 0;
     justify-self: center;
     order: 2;
@@ -271,7 +271,7 @@
 
 @media (min-width: 1024px) {
   .hero-scroll-video-layer {
-    inset: -26px -36px -42px -32px;
+    inset: -30px -41px -48px -37px;
   }
 }
 
@@ -411,16 +411,16 @@
     margin-right: 0;
     transform: none;
     order: 1;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 1.05rem; /* Increased slightly */
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.5;
-  max-width: 480px;
+  max-width: 520px; /* Increased from 480px */
   text-align: center;
   margin: 0 auto;
 }
@@ -451,21 +451,21 @@
 .btn-primary {
   background: var(--btn-color);
   color: #fff;
-  padding: 12px 28px;
+  padding: 14px 32px; /* Increased padding */
   border-radius: 40px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem; /* Increased font-size */
   box-shadow: 0 4px 15px rgba(135, 176, 5, 0.2);
   cursor: pointer;
 }
 
 .btn-secondary {
   background: #f4f4f4;
-  padding: 12px 24px;
+  padding: 14px 28px; /* Increased padding */
   border-radius: 30px;
   font-weight: 500;
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1.05rem; /* Increased font-size */
   cursor: pointer;
 }
 
