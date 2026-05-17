@@ -150,14 +150,11 @@
 
   .line-one,
   .line-two {
-    font-size: 2.6rem;
-    /* Even smaller for 2 lines */
-    max-width: 330px;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    /* Dynamic scaling for exactly 2 lines across all mobile widths */
+    max-width: 100%;
     line-height: 1.1;
-  }
-
-  .line-two {
-    white-space: normal;
+    white-space: nowrap !important;
   }
 
   .floating-msg {
