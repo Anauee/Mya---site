@@ -109,7 +109,7 @@
 
 @media (min-width: 1024px) {
   .hero-title-wrapper {
-    margin-bottom: 4rem; /* Generous vertical gap to avoid any collision with content */
+    margin-bottom: 2.5rem; /* Balanced vertical gap - pulls content block up perfectly */
   }
 
   .static-line-container {
