@@ -50,12 +50,14 @@ const ImpactQuote: React.FC = () => {
     const wordElements = textRef.current.querySelectorAll('.quote-word');
     if (wordElements.length === 0) return;
 
+    const isMobile = window.innerWidth <= 768;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=350%", // Extended for cards invasion
+          end: isMobile ? "+=180%" : "+=350%", // Fast, responsive scroll height on mobile
           scrub: 1,
           pin: true,
           anticipatePin: 1,
@@ -80,8 +82,6 @@ const ImpactQuote: React.FC = () => {
 
       // Phase 3: Small pause for impact
       tl.to({}, { duration: 1 });
-
-      const isMobile = window.innerWidth <= 768;
 
       // Phase 4: Cards invade from below
       tl.fromTo(cardsRef.current,

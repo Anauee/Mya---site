@@ -269,7 +269,8 @@
   }
 
   .impact-quote-section {
-    padding: 40px 20px;
+    min-height: 80vh !important; /* Reduces large empty height on mobile */
+    padding: 24px 20px !important;
   }
 
   .author-name {

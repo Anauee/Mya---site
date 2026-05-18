@@ -262,6 +262,10 @@
 }
 
 @media (max-width: 768px) {
+  .cta-full-section {
+    height: 85vh !important; /* Compresses vertical viewport height on mobile */
+  }
+
   .cta-cards-wrapper {
     height: 100%;
     padding: 0 10px;
