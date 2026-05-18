@@ -136,7 +136,7 @@ const CTASection: React.FC = () => {
       // --- MOBILE ANIMATION ---
       mm.add("(max-width: 768px)", () => {
         gsap.set(anchorCardRef.current, {
-          top: "42%", // Moved UP from 50%
+          top: "50%", // Aligned perfectly in the middle of the viewport
           left: "50%",
           xPercent: -50,
           yPercent: -50,
@@ -148,11 +148,11 @@ const CTASection: React.FC = () => {
         });
 
         gsap.set(sellCardRef.current, {
-          top: "150%",
+          top: "150%", // Starts off-screen at the bottom
           left: "50%",
           xPercent: -50,
           yPercent: -50,
-          width: "94%",
+          width: "92%", // Matches the anchor card width perfectly for elegant alignment
           height: "auto",
           zIndex: 10,
           opacity: 1
@@ -172,10 +172,17 @@ const CTASection: React.FC = () => {
         });
 
         tl.to(sellCardRef.current, {
-          top: "50%", // Covers with center alignment
+          top: "50%", // Slides exactly to the vertical center
           duration: 2,
           ease: "power2.out"
-        });
+        }, "cover");
+
+        tl.to(anchorCardRef.current, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1.5,
+          ease: "power2.out"
+        }, "cover+=0.5");
       });
 
     }, containerRef);
