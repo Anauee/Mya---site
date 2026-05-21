@@ -129,6 +129,9 @@
 
     /* Simulate PC View by scaling internal content */
     display: flex;
+    overflow: hidden !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-repeat: no-repeat !important;
 
     /* Perfect Dual Mask: Bottom AND Right fade */
     -webkit-mask-image:
@@ -1827,6 +1830,9 @@
 
   /* RE-ENABLE AND ENHANCE SIDE FOG */
   .mockup-window {
+    overflow: hidden !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-repeat: no-repeat !important;
     mask-image:
       linear-gradient(to bottom, black 75%, transparent 100%),
       linear-gradient(to right, black 60%, transparent 98%) !important;
