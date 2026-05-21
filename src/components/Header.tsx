@@ -232,7 +232,7 @@ export default function Header() {
               </button>
             </div>
             
-            <button className="cta-btn" ref={ctaRef}>Start a project</button>
+            <button className="cta-btn" ref={ctaRef}>Começar gratuitamente</button>
           </div>
         </div>
       </nav>

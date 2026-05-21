@@ -167,7 +167,7 @@ const WorkflowSteps: React.FC = () => {
         {/* Final CTA */}
         <div className="workflow-cta">
           <button className="cta-button">
-            Começar Agora
+            Começar teste gratuito
           </button>
         </div>
 
