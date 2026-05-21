@@ -11,6 +11,7 @@ if (typeof window !== "undefined") {
 export default function ScrollReveal({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
+  const childrenArray = React.Children.toArray(children);
 
   useEffect(() => {
     // Parallax wall lift: we slide the sticky Hero up as the user scrolls
@@ -46,7 +47,7 @@ export default function ScrollReveal({ children }: { children: React.ReactNode }
           backgroundColor: '#fff' // Ensure it's opaque
         }}
       >
-        {children[0]}
+        {childrenArray[0]}
       </div>
       
       {/* 
@@ -56,7 +57,7 @@ export default function ScrollReveal({ children }: { children: React.ReactNode }
         exactly as the Hero slides up!
       */}
       <div style={{ position: 'relative', zIndex: 1, marginTop: '-100vh', paddingTop: '100vh' }}>
-        {children[1]}
+        {childrenArray[1]}
       </div>
 
     </div>
