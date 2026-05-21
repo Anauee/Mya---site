@@ -181,8 +181,8 @@
   }
 
   .pillar-stack-card {
-    padding: 40px 30px;
-    min-height: 280px;
+    padding: 30px 20px;
+    min-height: 250px;
   }
 
   .pillar-stack-card:nth-child(1) { top: 80px; }
@@ -192,12 +192,11 @@
   .pillar-stack-card:nth-child(5) { top: 160px; }
 
   .pillar-highlight {
-    font-size: clamp(16px, 5vw, 20px);
+    font-size: clamp(14px, 4vw, 18px);
   }
 
   .pillar-highlight-line-group {
-    white-space: normal;
-    word-break: break-word;
+    white-space: nowrap;
   }
 
   .pillar-text {
