@@ -106,7 +106,7 @@ const WorkflowSteps: React.FC = () => {
       <div className="workflow-container">
         
         {/* Section Title */}
-        <div style={{ textAlign: 'center', marginTop: '80px', marginBottom: 'clamp(32px, 5vw, 60px)', padding: '0 8px' }}>
+        <div style={{ textAlign: 'center', marginTop: 'clamp(10px, 5vw, 80px)', marginBottom: 'clamp(32px, 5vw, 60px)', padding: '0 8px' }}>
           <h2 style={{ fontSize: 'clamp(1.35rem, 5vw, 3rem)', fontWeight: 800, fontFamily: "'Manrope', sans-serif", color: 'var(--text-color)', lineHeight: 1.1 }}>
             Tudo o que você precisa em um só lugar
           </h2>
