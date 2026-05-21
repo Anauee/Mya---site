@@ -188,7 +188,12 @@
   .pillar-stack-card:nth-child(5) { top: 160px; }
 
   .pillar-highlight {
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .pillar-highlight-line-group {
+    white-space: normal;
+    word-break: break-word;
   }
 
   .pillar-text {
