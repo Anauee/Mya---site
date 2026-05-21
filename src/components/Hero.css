@@ -150,7 +150,8 @@
 
   .line-one,
   .line-two {
-    font-size: clamp(1.6rem, 9.5vw, 3.8rem);
+    font-size: clamp(1.35rem, 9.5vw, 3.8rem);
+    padding: 0 8px;
     /* Dynamic scaling with increased scale for exactly 2 lines across all mobile widths */
     max-width: 100%;
     line-height: 1.1;
