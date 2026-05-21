@@ -5,8 +5,26 @@
   background-color: #ffffff;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.cta-section-title {
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+  margin-bottom: 55px;
+  padding: 0 20px;
+}
+
+.cta-section-title h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
 }
 
 .cta-cards-wrapper {
@@ -262,25 +280,44 @@
 }
 
 @media (max-width: 768px) {
+  .cta-section-title {
+    margin-bottom: 32px;
+  }
+
   .cta-full-section {
-    height: 85vh !important; /* Compresses vertical viewport height on mobile */
+    height: auto !important;
+    min-height: 100vh;
+    padding: 60px 0;
+    justify-content: flex-start;
   }
 
   .cta-cards-wrapper {
-    height: 100%;
-    padding: 0 10px;
+    height: auto;
+    min-height: 400px;
+    padding: 0;
+    margin: 42px auto 0 auto; /* Moved up by 8px (was 50px) */
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .cta-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
     width: 92%;
     height: auto;
-    padding: 24px 16px; /* Tightened padding to prevent vertical overflow */
+    padding: 24px 16px;
     border-radius: 24px;
+    margin: 0 auto;
   }
 
   .sell-card {
-    padding: 0 !important; /* Removes double padding on the sell card container so content doesn't squeeze */
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 0;
   }
 
   .card-title {
@@ -292,34 +329,53 @@
   }
 
   .sell-content {
-    padding: 28px 18px; /* Safe padding for high readability and flow */
+    padding: 40px 20px 24px 20px; /* Reduced bottom padding */
     max-width: 100%;
   }
 
   .title-lines-wrapper {
-    margin-bottom: 16px; /* Reduced to save vertical space */
+    margin-bottom: 28px; /* Increased space below title */
+  }
+
+  .card-body {
+    margin-top: 28px; /* Extra space above benefits */
   }
 
   .benefit-item {
-    margin-bottom: 10px;
-    gap: 12px;
+    margin-bottom: 18px; /* Increased space between items */
+    gap: 16px;
   }
 
   .underline-svg {
-    display: none;
+    display: block;
+    height: 18px;
+    bottom: -14px;
   }
 
   .total-value {
     font-size: 1.6rem;
   }
 
+  .card-footer {
+    margin-top: 36px; /* Push the total section further down */
+  }
+
+  .item-name {
+    font-size: 0.85rem; /* Reduced to fit on line */
+  }
+
+  .item-price {
+    font-size: 0.8rem; /* Reduced to fit on line */
+    white-space: nowrap; /* Prevent price from wrapping */
+  }
+
   .cost-item {
-    padding: 6px 0; /* Compact pricing item spacing */
+    padding: 8px 0; /* Slightly more breathing room for list items */
   }
 
   .cta-final-btn {
-    padding: 12px 18px; /* Tighter button padding for perfect mobile sizing */
+    padding: 16px 18px; 
     font-size: 1rem;
-    margin-top: 12px;
+    margin-top: 20px; /* Reduced space above the button */
   }
 }

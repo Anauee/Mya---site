@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, useTransition } from 'react';
 import gsap from 'gsap';
-import { BarChart2, Users, MessageSquare, Megaphone, UserCheck, Layers, Settings, ChevronLeft, Plus, BarChart, Search, Filter } from 'lucide-react';
+import { BarChart2, Users, MessageSquare, Megaphone, UserCheck, Layers, Settings, ChevronLeft, Plus, BarChart, Search, Filter, ArrowDown } from 'lucide-react';
 import './Features.css';
 
 const SESSIONS = [
@@ -260,6 +260,17 @@ export default function Features() {
     <section className="features-section" id="about">
       <div className="container features-container">
         
+        {/* Features Section Title */}
+        <div style={{ textAlign: 'center', marginBottom: '40px', padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 800, fontFamily: "'Manrope', sans-serif", color: 'var(--text-color)', lineHeight: 1.2 }}>
+            Veja como o nosso sistema é intuitivo e fácil de usar
+          </h2>
+          <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', opacity: 0.7 }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#64748b' }}>botões interativos</span>
+            <ArrowDown size={16} color="#64748b" />
+          </div>
+        </div>
+
         {/* Integrated Grid Navigation */}
         <div className="tabs-grid">
           {SESSIONS.map((session) => (

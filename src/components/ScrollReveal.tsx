@@ -10,93 +10,55 @@ if (typeof window !== "undefined") {
 
 export default function ScrollReveal({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const sections = containerRef.current?.querySelectorAll('section');
-    if (!sections || sections.length < 2) return;
-
-    const firstSection = sections[0] as HTMLElement;
-    const secondSection = sections[1] as HTMLElement;
-
-    // CONFIG FOR REVEAL
-    gsap.set(containerRef.current, { position: 'relative' });
-    
-    // First section is the "wall" on top
-    gsap.set(firstSection, { 
-      position: 'relative', 
-      zIndex: 2,
-      backgroundColor: 'white' 
-    });
-
-    // Second section is "underneath"
-    gsap.set(secondSection, { 
-      position: 'fixed', 
-      top: 0, 
-      left: 0, 
-      width: '100%', 
-      height: '100vh',
-      zIndex: 1,
-      opacity: 0,
-      pointerEvents: 'none'
-    });
-
-    const tl = gsap.timeline({
+    // Parallax wall lift: we slide the sticky Hero up as the user scrolls
+    gsap.to(heroRef.current, {
+      yPercent: -100,
+      ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=150%", // Increased to allow for a pause at the end
+        end: "+=100%", // 100vh scroll
         scrub: true,
-        pin: true,
-        onUpdate: (self) => {
-          if (self.progress > 0) {
-            gsap.set(secondSection, { opacity: 1, pointerEvents: 'auto' });
-          } else {
-            gsap.set(secondSection, { opacity: 0, pointerEvents: 'none' });
-          }
-        }
       }
     });
 
-    // WALL SLIDES UP (completes at 66% of the timeline)
-    tl.to(firstSection, {
-      yPercent: -100,
-      ease: "none",
-      duration: 1
-    });
-
-    // Subtle parallax reveal for the second section content
-    const revealTarget = secondSection.firstElementChild || secondSection;
-    tl.fromTo(revealTarget, 
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, ease: "none", duration: 1 },
-      0
-    );
-
-    // ADD PAUSE: Keep pined for the remaining 33% of the scroll
-    tl.to({}, { duration: 0.5 });
-
-    // Cleanup transition at the end
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "bottom top",
-      onEnter: () => {
-        gsap.set(secondSection, { position: 'relative', opacity: 1, pointerEvents: 'auto' });
-      },
-      onLeaveBack: () => {
-        gsap.set(secondSection, { position: 'fixed', opacity: 1, pointerEvents: 'auto' });
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => {
-        if (t.trigger === containerRef.current) t.kill();
-      });
-    };
   }, []);
 
   return (
-    <div ref={containerRef} className="reveal-container">
-      {children}
+    <div ref={containerRef} className="reveal-container" style={{ position: 'relative' }}>
+      
+      {/* 
+        The Hero stays sticky at the top of the screen. 
+        It naturally acts as a wall that covers whatever is scrolling underneath it. 
+        GSAP will translate it UP on the Y-axis to lift the wall.
+      */}
+      <div 
+        ref={heroRef} 
+        style={{ 
+          position: 'sticky', 
+          top: 0, 
+          height: '100vh', 
+          zIndex: 2, 
+          overflow: 'hidden',
+          backgroundColor: '#fff' // Ensure it's opaque
+        }}
+      >
+        {children[0]}
+      </div>
+      
+      {/* 
+        The second section is pulled up to be behind the Hero when the page loads.
+        As the user scrolls, it naturally moves UP, but is hidden by the Hero.
+        Because its content has 100vh of paddingTop, the actual content only enters the viewport
+        exactly as the Hero slides up!
+      */}
+      <div style={{ position: 'relative', zIndex: 1, marginTop: '-100vh', paddingTop: '100vh' }}>
+        {children[1]}
+      </div>
+
     </div>
   );
 }

@@ -14,20 +14,19 @@ interface Testimonial {
   name: string;
   stars: number;
   time: string;
-  text: string;
-  highlight?: string;
+  text: React.ReactNode;
   color: string;
 }
 
 const testimonials: Testimonial[] = [
-  { initials: "JG", name: "Juliana Gelesky", stars: 5, time: "H\u00E1 15 semanas", text: "Excelente experi\u00EAncia. O atendimento \u00E9 extremamente \u00E1gil, claro e eficiente. A equipe responde r\u00E1pido, entende de verdade o problema.", highlight: "Recomendo de olhos fechados.", color: "#4285F4" },
-  { initials: "RM", name: "Rafael Mendon\u00E7a", stars: 5, time: "H\u00E1 8 semanas", text: "A Mya transformou completamente a forma como gerenciamos nossos leads. O CRM \u00E9 intuitivo e a automa\u00E7\u00E3o economizou horas.", highlight: "Resultado vis\u00EDvel j\u00E1 na primeira semana.", color: "#EA4335" },
-  { initials: "CS", name: "Camila Santos", stars: 5, time: "H\u00E1 12 semanas", text: "J\u00E1 testei v\u00E1rias solu\u00E7\u00F5es no mercado e nenhuma chegou perto. A integra\u00E7\u00E3o com WhatsApp \u00E9 perfeita.", highlight: "Sem d\u00FAvida, a melhor at\u00E9 agora.", color: "#FBBC04" },
-  { initials: "AL", name: "Andr\u00E9 Lima", stars: 5, time: "H\u00E1 6 semanas", text: "Nosso time comercial adotou a Mya em menos de um dia. A curva de aprendizado \u00E9 quase zero.", highlight: "Ferramenta indispens\u00E1vel.", color: "#34A853" },
-  { initials: "MP", name: "Marina Pellegrini", stars: 5, time: "H\u00E1 10 semanas", text: "O que mais me impressionou foi a personaliza\u00E7\u00E3o. A IA sugere a\u00E7\u00F5es que realmente fazem sentido.", highlight: "Parece que a Mya conhece meu neg\u00F3cio.", color: "#8E24AA" },
-  { initials: "FT", name: "Felipe Torres", stars: 5, time: "H\u00E1 4 semanas", text: "Migrei do Pipedrive para a Mya e n\u00E3o me arrependo. A interface \u00E9 muito mais moderna.", highlight: "N\u00EDvel enterprise com simplicidade.", color: "#00897B" },
-  { initials: "LR", name: "Larissa Rocha", stars: 5, time: "H\u00E1 20 semanas", text: "Desde que implementamos, nossa taxa de convers\u00E3o subiu 40%. O kanban \u00E9 viciante de usar.", highlight: "Crescimento real, n\u00E3o promessa.", color: "#E65100" },
-  { initials: "DV", name: "Daniel Vieira", stars: 5, time: "H\u00E1 3 semanas", text: "A IA da Mya aprende o tom de voz da minha empresa. As mensagens parecem escritas por um humano.", highlight: "Tecnologia de outro n\u00EDvel.", color: "#1565C0" },
+  { initials: "JG", name: "Juliana Gelesky", stars: 5, time: "Há 15 semanas", color: "#4285F4", text: <>Excelente experiência. <strong>O atendimento é extremamente ágil, claro e eficiente.</strong> A equipe responde rápido, entende de verdade o problema. Recomendo de olhos fechados.</> },
+  { initials: "RM", name: "Rafael Mendonça", stars: 5, time: "Há 8 semanas", color: "#EA4335", text: <>A Mya transformou completamente a forma como gerenciamos nossos leads. O CRM é intuitivo e a automação economizou horas. <strong>Resultado visível já na primeira semana.</strong></> },
+  { initials: "CS", name: "Camila Santos", stars: 5, time: "Há 12 semanas", color: "#FBBC04", text: <>Já testei várias soluções no mercado e nenhuma chegou perto. <strong>A integração com WhatsApp é perfeita.</strong> Sem dúvida, a melhor até agora.</> },
+  { initials: "AL", name: "André Lima", stars: 5, time: "Há 6 semanas", color: "#34A853", text: <>Nosso time comercial adotou a Mya em menos de um dia. <strong>A curva de aprendizado é quase zero.</strong> Ferramenta indispensável.</> },
+  { initials: "MP", name: "Marina Pellegrini", stars: 5, time: "Há 10 semanas", color: "#8E24AA", text: <>O que mais me impressionou foi a personalização. <strong>A IA sugere ações que realmente fazem sentido.</strong> Parece que a Mya conhece meu negócio.</> },
+  { initials: "FT", name: "Felipe Torres", stars: 5, time: "Há 4 semanas", color: "#00897B", text: <>Migrei do Pipedrive para a Mya e não me arrependo. <strong>Nível enterprise com simplicidade.</strong> A interface é muito mais moderna.</> },
+  { initials: "LR", name: "Larissa Rocha", stars: 5, time: "Há 20 semanas", color: "#E65100", text: <>Desde que implementamos, <strong>nossa taxa de conversão subiu 40%.</strong> O kanban é viciante de usar. Crescimento real, não promessa.</> },
+  { initials: "DV", name: "Daniel Vieira", stars: 5, time: "Há 3 semanas", color: "#1565C0", text: <><strong>A IA da Mya aprende o tom de voz da minha empresa.</strong> As mensagens parecem escritas por um humano. Tecnologia de outro nível.</> },
 ];
 
 const waveOffsetsDesktop = [0, -25, 8, -30, 15, -20, 5, -28];
@@ -39,9 +38,10 @@ const ImpactQuote: React.FC = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const words = [
-    "\u201CQuando", "abri", "a", "Mya", "pela", "primeira",
-    "vez,", "soube", "instantaneamente", "que",
-    "era", "o", "pr\u00F3ximo", "passo", "da", "evolu\u00E7\u00E3o", "do", "CRM.\u201D"
+    "“Consigo", "atender", "mais", "de", "300", "pessoas", "por", "dia",
+    "no", "meu", "WhatsApp", "da", "empresa,", "realmente", "depois", "que",
+    "comecei", "a", "usar", "o", "sistema", "e", "a", "IA", "de",
+    "atendimento", "meu", "processo", "de", "vendas", "facilitou", "muito!”"
   ];
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const ImpactQuote: React.FC = () => {
       wordElements.forEach((word) => {
         tl.to(word, {
           color: "#0f172a",
-          duration: 1,
+          duration: 0.35,
           ease: "none",
         });
       });
@@ -117,8 +117,8 @@ const ImpactQuote: React.FC = () => {
         </h2>
 
         <div className="quote-author">
-          <span className="author-name">Margaret Shen</span>
-          <span className="author-meta">Head of Business Operations &bull; Modal</span>
+          <span className="author-name">Carlos Oliveira</span>
+          <span className="author-meta">Proprietário &bull; Carlos Hamburgueria</span>
         </div>
       </div>
 
@@ -149,7 +149,6 @@ const ImpactQuote: React.FC = () => {
                 </div>
                 <p className="testimonial-body">
                   {t.text}
-                  {t.highlight && <strong> {t.highlight}</strong>}
                 </p>
                 <div className="testimonial-google">
                   <svg viewBox="0 0 48 48" width="20" height="20">

@@ -11,7 +11,8 @@ if (typeof window !== "undefined") {
 }
 
 const roles = ["SDR", "vendedor", "atendente"];
-const HERO_VIDEO_URL = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video1.mp4";
+const HERO_VIDEO_URL = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/0520.mp4";
+// const HERO_VIDEO_URL_ALTERNATIVE = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video%202.mp4";
 const HERO_VIDEO_SCROLL_DISTANCE = "+=35%";
 
 const MESSAGES = [
@@ -209,11 +210,13 @@ export default function Hero() {
           {/* RIGHT: Copy & CTA */}
           <div className="hero-copy">
             <p className="hero-description">
-              Com a Mya, você pode construir agentes de IA que planejam, agem e colaboram de forma mais efetiva. Escale suas vendas sem aumentar sua equipe.
+              Um sistema comercial completo que responde no WhatsApp em segundos, humaniza o contato, tira todas as dúvidas do seu cliente, faz orçamentos, vende e até agenda suas sessões e reuniões.
+            </p>
+            <p className="hero-description" style={{ marginBottom: '12px', fontWeight: 'bold' }}>
+              Teste na sua empresa com 30 dias totalmente gratuitos!
             </p>
             <div className="hero-actions">
-              <a href="#pricing" className="btn-primary">Start building</a>
-              <a href="#about" className="btn-secondary">Contact sales</a>
+              <a href="#pricing" className="btn-primary">Começar teste gratuito</a>
             </div>
           </div>
 

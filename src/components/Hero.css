@@ -8,14 +8,13 @@
   position: relative;
   overflow: hidden;
   background-color: var(--bg-color);
-  border-bottom-left-radius: 48px;
-  border-bottom-right-radius: 48px;
-  box-shadow: 0 20px 80px rgba(13, 117, 144, 0.15);
 }
 
 @media (max-width: 1023px) {
   .hero-section {
     padding-top: 110px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     /* MOBILE REFINEMENT */
   }
 }
@@ -109,7 +108,8 @@
 
 @media (min-width: 1024px) {
   .hero-title-wrapper {
-    margin-bottom: 2.5rem;
+    margin-bottom: 4.5rem;
+    transform: translateY(-20px);
     /* Balanced vertical gap - pulls content block up perfectly */
   }
 
@@ -410,7 +410,7 @@
   .hero-copy {
     align-items: flex-start;
     margin-right: 0;
-    transform: translateY(-14px);
+    transform: translateY(-50px);
     /* Pulls ONLY the text block upward */
     order: 1;
     gap: 1.8rem;

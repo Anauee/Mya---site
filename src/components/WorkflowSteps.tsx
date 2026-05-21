@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     id: 1,
-    title: "Disparo Inteligente via WhatsApp",
+    title: "Disparo Inteligente para seus clientes via WhatsApp",
     subtitle: "AUMENTE SUA TAXA DE CONVERSÃO",
     description: "Inicie conversas de forma automática e personalizada com seus leads. Nossa tecnologia garante que cada mensagem pareça única, aumentando drasticamente o engajamento e garantindo que nenhum lead esfrie. Esqueça disparos genéricos; foque em conexões reais que convertem em vendas.",
     icon: "📱",
@@ -18,7 +18,7 @@ const STEPS = [
   },
   {
     id: 2,
-    title: "Mya: Sua IA SDR Especialista",
+    title: "Uma atendente IA personalizada para sua empresa",
     subtitle: "ATENDIMENTO HUMANO E ESCALÁVEL",
     description: "Uma inteligência artificial treinada especificamente para o seu negócio. A Mya entende objeções, responde dúvidas complexas e qualifica leads em tempo real, 24 horas por dia. Ela não apenas responde, ela conduz o lead até o agendamento, agindo como o melhor vendedor do seu time.",
     icon: "✨",
@@ -26,7 +26,7 @@ const STEPS = [
   },
   {
     id: 3,
-    title: "CRM Integrado para Gestão Total",
+    title: "Sistema de Gestão de Conversas e CRM Integrado",
     subtitle: "CONTROLE ABSOLUTO DO SEU FUNIL",
     description: "Gerencie todo o fluxo de vendas em uma interface intuitiva e poderosa. Acompanhe a jornada de cada cliente, desde o primeiro contato via WhatsApp até o fechamento. Com dados precisos e automações de funil, você terá a visão clara de onde investir para escalar seus resultados.",
     icon: "📊",
@@ -51,31 +51,26 @@ const WorkflowSteps: React.FC = () => {
       end: "bottom center",
       scrub: 0.5,
       onUpdate: (self) => {
-        // Update line height
         if (progressRef.current) {
           gsap.set(progressRef.current, { height: `${self.progress * 100}%` });
+          
+          const progressRect = progressRef.current.getBoundingClientRect();
+          const progressBottom = progressRect.bottom;
+
+          // Activate nodes based on visual line reach
+          nodesRef.current.forEach((node) => {
+            if (!node) return;
+            
+            const nodeRect = node.getBoundingClientRect();
+            const nodeCenter = nodeRect.top + nodeRect.height / 2;
+
+            if (progressBottom >= nodeCenter) {
+              node.classList.add('active');
+            } else {
+              node.classList.remove('active');
+            }
+          });
         }
-
-        // Activate nodes based on progress line reach
-        nodesRef.current.forEach((node) => {
-          if (!node || !sectionRef.current) return;
-          
-          const nodeRect = node.getBoundingClientRect();
-          const sectionRect = sectionRef.current.getBoundingClientRect();
-          
-          // Node center relative to section top
-          const nodeCenterRelative = (nodeRect.top + nodeRect.height / 2) - sectionRect.top;
-          
-          const sectionHeight = sectionRef.current.offsetHeight;
-          const railTotalHeight = sectionHeight - 180; // Matching the CSS bottom: 180px
-          const currentProgressY = self.progress * railTotalHeight;
-
-          if (currentProgressY >= nodeCenterRelative) {
-            node.classList.add('active');
-          } else {
-            node.classList.remove('active');
-          }
-        });
       }
     });
 
@@ -109,6 +104,13 @@ const WorkflowSteps: React.FC = () => {
   return (
     <section className="workflow-section" id="work" ref={sectionRef}>
       <div className="workflow-container">
+        
+        {/* Section Title */}
+        <div style={{ textAlign: 'center', marginTop: '80px', marginBottom: '40px', padding: '0 20px' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, fontFamily: "'Manrope', sans-serif", color: 'var(--text-color)', lineHeight: 1.2 }}>
+            Tudo o que você precisa em um só lugar
+          </h2>
+        </div>
         
         {/* Timeline Rail */}
         <div className="timeline-rail">

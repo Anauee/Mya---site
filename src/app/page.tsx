@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import ScrollReveal from '@/components/ScrollReveal';
+import PillarsSection from '@/components/PillarsSection';
 
 // Dynamic imports (Code Splitting) for heavy client components below the fold
 const WaveMarquee = dynamic(() => import('@/components/WaveMarquee'), { ssr: false });
@@ -59,12 +60,13 @@ export default function Home() {
       <Header />
       <ScrollReveal>
         <Hero />
-        <Features />
+        <PillarsSection />
       </ScrollReveal>
       
       <WaveMarquee />
 
       <WorkflowSteps />
+      <Features />
       <ImpactQuote />
       <CTASection />
       <FAQSection />

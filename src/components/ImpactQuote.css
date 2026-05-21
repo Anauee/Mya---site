@@ -23,7 +23,7 @@
 
 @media (min-width: 1025px) {
   .quote-container {
-    max-width: 860px; /* Slightly narrower on PC (down from 1000px) for tight premium formatting */
+    max-width: 1300px; /* Increased further to force text into fewer lines */
   }
 }
 
@@ -45,7 +45,7 @@
 
 .quote-word {
   font-family: 'Manrope', sans-serif;
-  font-size: 3.8rem;
+  font-size: 3.2rem;
   font-weight: 800;
   line-height: 1.2;
   color: #d1d5db;

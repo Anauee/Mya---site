@@ -28,26 +28,30 @@ const CTASection: React.FC = () => {
       // --- DESKTOP ANIMATION ---
       mm.add("(min-width: 769px)", () => {
         gsap.set(anchorCardRef.current, {
-          left: "80px",
+          position: "absolute",
+          left: "30px",
           top: "50%",
           yPercent: -50,
           xPercent: 0,
           scale: 1,
           opacity: 1,
           zIndex: 1,
-          width: "45%",
-          height: "650px"
+          width: "44%",
+          height: "650px",
+          margin: 0
         });
 
         gsap.set(sellCardRef.current, {
-          right: "80px",
+          position: "absolute",
+          right: "30px",
           left: "auto",
           top: "50%",
           yPercent: -50,
           xPercent: 0,
           zIndex: 10,
-          width: "45%",
-          height: "650px"
+          width: "44%",
+          height: "650px",
+          margin: 0
         });
 
         gsap.set(sellBgRef.current, { width: "100%", height: "100%", borderRadius: "32px" });
@@ -135,25 +139,16 @@ const CTASection: React.FC = () => {
 
       // --- MOBILE ANIMATION ---
       mm.add("(max-width: 768px)", () => {
+        // Rely purely on the new robust CSS for positioning anchor card
         gsap.set(anchorCardRef.current, {
-          top: "50%", // Aligned perfectly in the middle of the viewport
-          left: "50%",
-          xPercent: -50,
-          yPercent: -50,
-          width: "92%",
-          height: "auto",
           opacity: 1,
           zIndex: 1,
           scale: 1
         });
 
+        // Setup the initial off-screen state for sell card
         gsap.set(sellCardRef.current, {
-          top: "150%", // Starts off-screen at the bottom
-          left: "50%",
-          xPercent: -50,
-          yPercent: -50,
-          width: "92%", // Matches the anchor card width perfectly for elegant alignment
-          height: "auto",
+          top: "120%", 
           zIndex: 10,
           opacity: 1
         });
@@ -172,7 +167,7 @@ const CTASection: React.FC = () => {
         });
 
         tl.to(sellCardRef.current, {
-          top: "50%", // Slides exactly to the vertical center
+          top: "-16px", // Moved up more to fully cover the white card
           duration: 2,
           ease: "power2.out"
         }, "cover");
@@ -183,6 +178,19 @@ const CTASection: React.FC = () => {
           duration: 1.5,
           ease: "power2.out"
         }, "cover+=0.5");
+
+        scribbleRefs.current.forEach((path, index) => {
+          if (path) {
+            const length = path.getTotalLength() || 450;
+            gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+            
+            tl.to(path, {
+              strokeDashoffset: 0,
+              duration: 1.5,
+              ease: "power1.inOut"
+            }, `cover+=${1.0 + (index * 0.5)}`);
+          }
+        });
       });
 
     }, containerRef);
@@ -192,6 +200,9 @@ const CTASection: React.FC = () => {
 
   return (
     <section className="cta-full-section" id="pricing" ref={containerRef}>
+      <div className="cta-section-title">
+        <h2>Economize mais de mil reais por mês utilizando o nosso sistema!</h2>
+      </div>
       <div className="cta-cards-wrapper">
 
         {/* Anchor Card */}
@@ -203,30 +214,30 @@ const CTASection: React.FC = () => {
 
           <div className="card-body">
             <div className="cost-item">
-              <span className="item-name">CRM Tradicional</span>
+              <span className="item-name">CRM tradicional (complicado e confuso)</span>
               <span className="item-price">R$ 400/mês</span>
               <X size={16} className="icon-red" />
             </div>
             <div className="cost-item">
-              <span className="item-name">Automação WhatsApp</span>
-              <span className="item-price">R$ 350/mês</span>
-              <X size={16} className="icon-red" />
-            </div>
-            <div className="cost-item">
-              <span className="item-name">IA Chatbot (SDR)</span>
+              <span className="item-name">Atendente de IA para WhatsApp</span>
               <span className="item-price">R$ 500/mês</span>
               <X size={16} className="icon-red" />
             </div>
             <div className="cost-item">
-              <span className="item-name">Analytics & BI</span>
-              <span className="item-price">R$ 200/mês</span>
+              <span className="item-name">Sistema para gerenciar conversas e vendas</span>
+              <span className="item-price">R$ 400/mês</span>
+              <X size={16} className="icon-red" />
+            </div>
+            <div className="cost-item">
+              <span className="item-name">Disparador para remarketing de clientes</span>
+              <span className="item-price">R$ 250/mês</span>
               <X size={16} className="icon-red" />
             </div>
           </div>
 
           <div className="card-footer">
             <div className="total-label">Total mensal</div>
-            <div className="total-value">R$ 1.450,00</div>
+            <div className="total-value">R$ 1.550,00</div>
             <p className="total-hint">+ Desperdício de tempo e dados soltos</p>
           </div>
         </div>
@@ -250,7 +261,7 @@ const CTASection: React.FC = () => {
 
           <div className="sell-content">
             <div className="card-header relative">
-              <span className="card-subtitle-alt">Depois da Mya</span>
+              <span className="card-subtitle-alt highlight-subtitle">Com nosso sistema completo</span>
               <div className="title-lines-wrapper">
                 <div className="title-line-group">
                   <h3 className="card-title-alt">Tudo o que você precisa</h3>
@@ -287,8 +298,7 @@ const CTASection: React.FC = () => {
                   <Check size={18} />
                 </div>
                 <div>
-                  <h4>CRM Nativo & Inteligente</h4>
-                  <p>Gestão de leads com IA integrada.</p>
+                  <h4 style={{ fontWeight: 600, lineHeight: 1.4 }}>Organize de forma fácil todas as conversas e atendimentos</h4>
                 </div>
               </div>
               <div className="benefit-item">
@@ -296,8 +306,7 @@ const CTASection: React.FC = () => {
                   <Check size={18} />
                 </div>
                 <div>
-                  <h4>Automação de WhatsApp</h4>
-                  <p>Disparos e conversas fluidas sem integrações complexas.</p>
+                  <h4 style={{ fontWeight: 600, lineHeight: 1.4 }}>Resumo simplificado de tudo o que seu time comercial está fazendo</h4>
                 </div>
               </div>
               <div className="benefit-item">
@@ -305,15 +314,14 @@ const CTASection: React.FC = () => {
                   <Check size={18} />
                 </div>
                 <div>
-                  <h4>IA SDR Especialista</h4>
-                  <p>Qualificação e agendamento automático 24/7.</p>
+                  <h4 style={{ fontWeight: 600, lineHeight: 1.4 }}>Gestão de clientes e vendas integrado com o WhatsApp e com a IA</h4>
                 </div>
               </div>
             </div>
 
             <div className="card-footer">
               <button className="cta-final-btn">
-                <span>Começar Agora</span>
+                <span>Começar teste gratuito</span>
                 <ArrowRight size={20} />
               </button>
             </div>
