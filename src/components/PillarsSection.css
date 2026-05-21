@@ -14,7 +14,7 @@
 
 .pillars-main-title {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.35rem, 5vw, 3rem);
   font-weight: 800;
   color: #0f172a;
   line-height: 1.15;

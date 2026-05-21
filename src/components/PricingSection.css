@@ -299,7 +299,8 @@
   }
   
   .pricing-title {
-    font-size: 1.7rem;
+    font-size: 1.55rem;
+    padding: 0 8px;
   }
   
   .pricing-card {

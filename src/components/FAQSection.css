@@ -100,7 +100,8 @@
   }
 
   .faq-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    padding: 0 8px;
   }
 
   .faq-question {
