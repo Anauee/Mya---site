@@ -95,8 +95,12 @@
     padding: 0px 20px 80px;
   }
 
+  .faq-header {
+    margin-bottom: 32px;
+  }
+
   .faq-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .faq-question {

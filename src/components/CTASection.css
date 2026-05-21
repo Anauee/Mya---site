@@ -19,12 +19,12 @@
 }
 
 .cta-section-title h2 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.55rem, 4vw, 3rem);
   font-weight: 800;
   color: #0f172a;
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .cta-cards-wrapper {
