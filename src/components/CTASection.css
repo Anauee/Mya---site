@@ -286,8 +286,8 @@
 
   .cta-full-section {
     height: auto !important;
-    min-height: 100vh;
-    padding: 30px 0;
+    min-height: auto;
+    padding: 30px 0 40px 0;
     justify-content: flex-start;
   }
 
@@ -295,7 +295,7 @@
     height: auto;
     min-height: 480px; /* Ensure enough height for absolute sell card */
     padding: 0;
-    margin: 10px auto 0 auto;
+    margin: 40px auto 0 auto;
     width: 100%;
     display: flex;
     justify-content: center;

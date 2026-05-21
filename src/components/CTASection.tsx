@@ -160,7 +160,7 @@ const CTASection: React.FC = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: "+=120%",
+            end: "+=80%",
             pin: true,
             scrub: 1,
           }
