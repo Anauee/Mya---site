@@ -90,6 +90,10 @@
   display: none; /* Controlled by display: flex in JS when expanded */
 }
 
+.mobile-text {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav-container {
     padding: 12px 20px !important;
@@ -185,10 +189,6 @@
 
 .cta-btn:hover {
   transform: scale(1.03);
-}
-
-.mobile-text {
-  display: none;
 }
 
 /* Hidden elements */
