@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-brand">
-            <span className="brand-logo">S</span>
+            <img src="https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/fcdc3a68-dbea-4bed-86d8-5dc87c809ad1-removebg-preview.png" alt="Strategic AI Logo" className="brand-logo-img" />
             <span className="brand-name">Strategic AI</span>
           </div>
           <p className="copyright">© {currentYear} Strategic AI, Inc.</p>

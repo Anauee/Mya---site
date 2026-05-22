@@ -53,17 +53,10 @@
   gap: 12px;
 }
 
-.brand-logo {
-  background: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
-  color: #000;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  border-radius: 8px;
-  font-size: 1.2rem;
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand-name {
