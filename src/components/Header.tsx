@@ -172,12 +172,12 @@ export default function Header() {
             duration: 0.3 
           }, "-=0.2");
       } else {
-        tl.to(navRef.current, { maxWidth: "1100px", duration: 0.5, ease: "back.out(1.2)" })
+        tl.to(navRef.current, { maxWidth: "1300px", duration: 0.5, ease: "back.out(1.2)" })
           .to(desktopLinksRef.current, { 
             width: "auto", 
             opacity: 1, 
             scale: 1, 
-            margin: "0 25px",
+            margin: "0 15px",
             pointerEvents: "auto", 
             duration: 0.3 
           }, "-=0.3");
