@@ -1836,24 +1836,12 @@
     overflow: hidden !important;
     mask-repeat: no-repeat !important;
     -webkit-mask-repeat: no-repeat !important;
-    mask-image:
-      linear-gradient(to bottom, black 75%, transparent 100%),
-      linear-gradient(to right, black 60%, transparent 98%) !important;
-    -webkit-mask-image:
-      linear-gradient(to bottom, black 75%, transparent 100%),
-      linear-gradient(to right, black 60%, transparent 98%) !important;
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
   }
 
   .mockup-fog-right {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 80px !important;
-    background: linear-gradient(to right, transparent, white 90%) !important;
-    z-index: 10 !important;
-    pointer-events: none !important;
+    display: none !important;
   }
 
   /* CONVERSAS SPLIT VIEW FOR MOBILE */

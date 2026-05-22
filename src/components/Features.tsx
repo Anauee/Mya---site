@@ -78,6 +78,13 @@ export default function Features() {
 
   useEffect(() => {
     console.log("Current active tab:", activeTab);
+    
+    // Reset scroll position on mobile when tab changes
+    const wrapper = document.querySelector('.crm-mockup-wrapper');
+    if (wrapper) {
+      wrapper.scrollLeft = 0;
+    }
+
     // Transition animation when tab changes
     if (contentRef.current) {
       const tl = gsap.timeline();
