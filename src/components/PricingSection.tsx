@@ -16,7 +16,7 @@ const WhatsAppIcon = () => (
 );
 
 export default function PricingSection() {
-  const WHATSAPP_NUMBER = "5511999999999"; // Can be replaced later
+  const WHATSAPP_NUMBER = "554196635378"; // Can be replaced later
   const WHATSAPP_LINK_ATENDER = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20plano%20Atender.`;
   const WHATSAPP_LINK_ESCALAR = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20plano%20Escalar.`;
   const WHATSAPP_LINK_FIDELIZAR = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1,%20gostaria%20de%20contratar%20o%20plano%20Fidelizar.`;

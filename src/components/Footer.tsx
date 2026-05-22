@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="footer-column">
             <h3>Canais</h3>
             <ul className="footer-links">
-              <li><a href="#" className="highlight-link">WhatsApp</a></li>
+              <li><a href="https://wa.me/554196635378" target="_blank" rel="noopener noreferrer" className="highlight-link">WhatsApp</a></li>
               <li><a href="#" className="highlight-link">Google Meu Negócio</a></li>
             </ul>
           </div>
