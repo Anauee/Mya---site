@@ -159,6 +159,7 @@ const ImpactQuote: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 };
