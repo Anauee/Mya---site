@@ -234,7 +234,10 @@ export default function Header() {
               </button>
             </div>
             
-            <button className="cta-btn" ref={ctaRef}>Começar gratuitamente</button>
+            <button className="cta-btn" ref={ctaRef}>
+              <span className="desktop-text">Começar gratuitamente</span>
+              <span className="mobile-text">Começar</span>
+            </button>
           </div>
         </div>
       </nav>
