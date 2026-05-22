@@ -102,6 +102,13 @@ export default function Hero() {
     };
   }, []);
 
+  // Set video playback rate to 1.5x
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.5;
+    }
+  }, []);
+
 
 
   return (
