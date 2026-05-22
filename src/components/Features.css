@@ -130,17 +130,42 @@
   }
 
   .mockup-window {
-    width: 190vw;
-    min-width: 190vw;
+    /* Base width, overridden by active classes below */
+    width: 150vw;
+    min-width: 150vw;
     flex-shrink: 0;
     height: 440px;
     border-radius: 12px 0 0 0;
 
     /* Simulate PC View by scaling internal content */
     display: flex;
-    overflow: visible !important;
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
+    overflow: hidden !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-repeat: no-repeat !important;
+
+    /* Keep bottom fade only, remove right fade so when scrolled it's visible */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .crm-mockup-wrapper.pipeline-active .mockup-window {
+    width: 185vw;
+    min-width: 185vw;
+  }
+  
+  .crm-mockup-wrapper.dashboard-active .mockup-window {
+    width: 165vw;
+    min-width: 165vw;
+  }
+  
+  .crm-mockup-wrapper.conversas-active .mockup-window {
+    width: 158vw;
+    min-width: 158vw;
+  }
+  
+  .crm-mockup-wrapper.contatos-active .mockup-window {
+    width: 150vw;
+    min-width: 150vw;
   }
 }
 
@@ -273,7 +298,7 @@
     transform: scale(0.85);
     /* Shrink content to simulate PC view */
     transform-origin: top left;
-    width: 88.8%;
+    width: 168.75vw !important; /* Fixed physical width independent of window size to maintain exact original proportions */
     /* More width to allow bleeding */
     /* Compensate for scale */
     overflow: visible;
@@ -1102,8 +1127,12 @@
 
 /* RESTORE DUAL NEBLINA (FOG) - BOTTOM AND RIGHT */
 .mockup-window {
-  mask-image: none !important;
-  -webkit-mask-image: none !important;
+  mask-image:
+    linear-gradient(to bottom, black 75%, transparent 100%),
+    linear-gradient(to right, black 85%, transparent 100%) !important;
+  -webkit-mask-image:
+    linear-gradient(to bottom, black 75%, transparent 100%),
+    linear-gradient(to right, black 85%, transparent 100%) !important;
   mask-composite: intersect !important;
   -webkit-mask-composite: source-in !important;
 }
@@ -1825,9 +1854,11 @@
 
   /* RE-ENABLE AND ENHANCE SIDE FOG */
   .mockup-window {
-    overflow: visible !important;
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
+    overflow: hidden !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
   }
 
   .mockup-fog-right {
