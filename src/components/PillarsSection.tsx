@@ -114,7 +114,7 @@ export default function PillarsSection() {
   }, []);
 
   return (
-    <section className="pillars-section" ref={containerRef}>
+    <section className="pillars-section" id="beneficios" ref={containerRef}>
       <div className="pillars-header">
         <h2 className="pillars-main-title">
           O Impacto Real de Uma Máquina de Vendas no Seu Negócio

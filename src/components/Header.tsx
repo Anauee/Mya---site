@@ -215,10 +215,11 @@ export default function Header() {
           </div>
 
           <div className={`desktop-links ${isMobile ? 'mobile-menu' : ''}`} ref={desktopLinksRef}>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#work" className="nav-link">Process</a>
-            <a href="#testimonials" className="nav-link">Testimonials</a>
-            <a href="#pricing" className="nav-link">Pricing</a>
+            <a href="#beneficios" className="nav-link">Benefícios</a>
+            <a href="#recursos" className="nav-link">Recursos</a>
+            <a href="#processo" className="nav-link">Processo</a>
+            <a href="#depoimentos" className="nav-link">Depoimentos</a>
+            <a href="#planos" className="nav-link">Planos</a>
             <a href="#faq" className="nav-link">FAQ</a>
           </div>
 

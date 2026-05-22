@@ -257,7 +257,7 @@ export default function Features() {
   }, [activeTab]);
 
   return (
-    <section className="features-section" id="about">
+    <section className="features-section" id="recursos">
       <div className="container features-container">
         
         {/* Features Section Title */}

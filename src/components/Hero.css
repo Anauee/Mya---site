@@ -1,6 +1,6 @@
 .hero-section {
   min-height: 100vh;
-  padding-top: 170px;
+  padding-top: 200px;
   /* ORIGINAL PC VALUE */
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 
 @media (max-width: 1023px) {
   .hero-section {
-    padding-top: 110px;
+    padding-top: 150px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     /* MOBILE REFINEMENT */
@@ -21,7 +21,7 @@
 
 @media (min-width: 1024px) {
   .hero-section {
-    padding-top: 170px;
+    padding-top: 200px;
   }
 }
 

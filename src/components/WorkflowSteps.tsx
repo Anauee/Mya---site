@@ -102,7 +102,7 @@ const WorkflowSteps: React.FC = () => {
   }, []);
 
   return (
-    <section className="workflow-section" id="work" ref={sectionRef}>
+    <section className="workflow-section" id="processo" ref={sectionRef}>
       <div className="workflow-container">
         
         {/* Section Title */}
