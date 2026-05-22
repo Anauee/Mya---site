@@ -299,7 +299,7 @@
   }
   
   .pricing-title {
-    font-size: clamp(1.35rem, 5vw, 3rem);
+    font-size: clamp(1.35rem, 5vw, 2.5rem);
     padding: 0 8px;
   }
   
