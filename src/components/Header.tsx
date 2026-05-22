@@ -14,7 +14,7 @@ export default function Header() {
   const desktopLinksRef = useRef<HTMLDivElement>(null);
   const pillControlsRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
   const navContentRef = useRef<HTMLDivElement>(null);
   const glassLayerRef = useRef<HTMLSpanElement>(null);
 
