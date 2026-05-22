@@ -20,7 +20,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Quanto tempo leva para a Mya estar rodando?",
-    answer: "No máximo 7 dias."
+    answer: "No máximo 7 dias. Nossa equipe cuidará de toda a configuração inicial, desde o mapeamento do seu processo de vendas atual até o treinamento completo da IA com o seu playbook. Entregamos a Mya pronta para rodar, testada e integrada, para que você possa começar a ver os resultados na primeira semana."
   },
   {
     question: "Meus dados estão seguros na plataforma?",
