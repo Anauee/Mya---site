@@ -130,8 +130,8 @@
   }
 
   .mockup-window {
-    width: 135%;
-    min-width: 135%;
+    width: 150%;
+    min-width: 150%;
     flex-shrink: 0;
     height: 440px;
     border-radius: 12px 0 0 0;
@@ -277,7 +277,7 @@
     transform: scale(0.85);
     /* Shrink content to simulate PC view */
     transform-origin: top left;
-    width: 125%;
+    width: 112.5%;
     /* More width to allow bleeding */
     /* Compensate for scale */
     overflow: visible;
