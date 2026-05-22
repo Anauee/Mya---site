@@ -7,6 +7,7 @@ import './ImpactQuote.css';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
 interface Testimonial {
@@ -96,10 +97,6 @@ const ImpactQuote: React.FC = () => {
         duration: 6,
         ease: "power2.out",
       }, "<");
-
-      // Force a refresh of the trigger points
-      setTimeout(() => ScrollTrigger.refresh(), 500);
-
     }, sectionRef);
 
     return () => ctx.revert();
