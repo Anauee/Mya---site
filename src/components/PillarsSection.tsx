@@ -117,7 +117,7 @@ export default function PillarsSection() {
     <section className="pillars-section" id="beneficios" ref={containerRef}>
       <div className="pillars-header">
         <h2 className="pillars-main-title">
-          O Impacto Real de Uma Máquina de Vendas no Seu Negócio
+          O Impacto Real de Uma <span style={{ color: 'var(--accent-color)' }}>Máquina de Vendas</span> no Seu Negócio
         </h2>
       </div>
 

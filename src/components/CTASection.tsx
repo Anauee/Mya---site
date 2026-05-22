@@ -201,7 +201,7 @@ const CTASection: React.FC = () => {
   return (
     <section className="cta-full-section" id="economia" ref={containerRef}>
       <div className="cta-section-title">
-        <h2>Economize mais de mil reais por mês utilizando o nosso sistema!</h2>
+        <h2>Economize <span style={{ color: 'var(--accent-color)' }}>mais de mil reais</span> por mês utilizando o nosso sistema!</h2>
       </div>
       <div className="cta-cards-wrapper">
 

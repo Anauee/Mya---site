@@ -46,7 +46,7 @@ const FAQSection: React.FC = () => {
           <div className="faq-icon-wrapper">
             <HelpCircle size={48} strokeWidth={1.5} className="faq-top-icon" />
           </div>
-          <h2 className="faq-title">Perguntas Frequentes</h2>
+          <h2 className="faq-title">Perguntas <span style={{ color: 'var(--accent-color)' }}>Frequentes</span></h2>
         </div>
 
         <div className="faq-list">

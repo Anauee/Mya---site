@@ -263,7 +263,7 @@ export default function Features() {
         {/* Features Section Title */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 40px)', padding: '0 8px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.35rem, 5vw, 2.5rem)', fontWeight: 800, fontFamily: "'Manrope', sans-serif", color: 'var(--text-color)', lineHeight: 1.1 }}>
-            Veja como o nosso sistema é intuitivo e fácil de usar
+            Veja como o nosso sistema é <span style={{ color: 'var(--accent-color)' }}>intuitivo e fácil de usar</span>
           </h2>
           <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', opacity: 0.7 }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#64748b' }}>botões interativos</span>

@@ -27,7 +27,7 @@ export default function PricingSection() {
       <div className="pricing-bg-blur-2"></div>
       
       <div className="pricing-header">
-        <h2 className="pricing-title">O único sistema de IA que você precisa para vender mais com muito menos esforço!</h2>
+        <h2 className="pricing-title">O único sistema de IA que você precisa para <span style={{ color: 'var(--accent-color)' }}>vender mais com muito menos esforço!</span></h2>
       </div>
 
       <div className="pricing-cards-container">
