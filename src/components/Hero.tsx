@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 }
 
 const roles = ["SDR", "vendedor", "atendente"];
-const HERO_VIDEO_URL = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video%20do%20site.mp4";
+const HERO_VIDEO_URL = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video%20do%20site%201.mp4";
 // const HERO_VIDEO_URL_ALTERNATIVE = "https://zqbteazpirbktxbmhzog.supabase.co/storage/v1/object/public/Mya%20-%20Sai/video%202.mp4";
 const HERO_VIDEO_SCROLL_DISTANCE = "+=35%";
 
