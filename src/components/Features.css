@@ -122,6 +122,7 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    justify-content: flex-start;
   }
   
   .crm-mockup-wrapper::-webkit-scrollbar {
