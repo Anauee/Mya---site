@@ -42,6 +42,9 @@
 }
 
 @media (max-width: 768px) {
+  .impact-quote-section {
+    height: 180vh;
+  }
   .quote-container {
     max-width: 310px; /* Increased from 260px to keep it elegant but avoid being too squeezed */
   }
@@ -277,7 +280,8 @@
   }
 
   .impact-quote-section {
-    min-height: 80vh !important; /* Reduces large empty height on mobile */
+    min-height: 80vh !important; 
+    height: 130vh !important; /* Decrease height to release scroll sooner */
     padding: 24px 20px !important;
   }
 
