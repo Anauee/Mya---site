@@ -105,12 +105,7 @@ const WorkflowSteps: React.FC = () => {
     <section className="workflow-section" id="processo" ref={sectionRef}>
       <div className="workflow-container">
         
-        {/* Section Title */}
-        <div style={{ textAlign: 'center', marginTop: 'clamp(10px, 5vw, 80px)', marginBottom: 'clamp(32px, 5vw, 60px)', padding: '0 28px' }}>
-          <h2 style={{ fontSize: 'clamp(1.35rem, 5vw, 2.5rem)', fontWeight: 800, fontFamily: "'Manrope', sans-serif", color: 'var(--text-color)', lineHeight: 1.1 }}>
-            Tudo o que você precisa em um só lugar
-          </h2>
-        </div>
+        {/* Title Removed */}
         
         {/* Timeline Rail */}
         <div className="timeline-rail">
