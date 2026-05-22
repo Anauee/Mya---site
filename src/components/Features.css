@@ -138,13 +138,9 @@
 
     /* Simulate PC View by scaling internal content */
     display: flex;
-    overflow: hidden !important;
-    mask-repeat: no-repeat !important;
-    -webkit-mask-repeat: no-repeat !important;
-
-    /* Keep bottom fade only, remove right fade so when scrolled it's visible */
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    overflow: visible !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
 }
 
@@ -1106,12 +1102,8 @@
 
 /* RESTORE DUAL NEBLINA (FOG) - BOTTOM AND RIGHT */
 .mockup-window {
-  mask-image:
-    linear-gradient(to bottom, black 75%, transparent 100%),
-    linear-gradient(to right, black 85%, transparent 100%) !important;
-  -webkit-mask-image:
-    linear-gradient(to bottom, black 75%, transparent 100%),
-    linear-gradient(to right, black 85%, transparent 100%) !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
   mask-composite: intersect !important;
   -webkit-mask-composite: source-in !important;
 }
@@ -1833,11 +1825,9 @@
 
   /* RE-ENABLE AND ENHANCE SIDE FOG */
   .mockup-window {
-    overflow: hidden !important;
-    mask-repeat: no-repeat !important;
-    -webkit-mask-repeat: no-repeat !important;
-    mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%) !important;
+    overflow: visible !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
 
   .mockup-fog-right {
