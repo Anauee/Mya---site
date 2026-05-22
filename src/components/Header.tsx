@@ -165,6 +165,7 @@ export default function Header() {
             display: 'flex',
             flexDirection: 'column',
             width: "100%", 
+            height: "auto",
             opacity: 1, 
             scale: 1, 
             margin: "20px 0 10px 0",
@@ -174,6 +175,8 @@ export default function Header() {
       } else {
         tl.to(navRef.current, { maxWidth: "1300px", duration: 0.5, ease: "back.out(1.2)" })
           .to(desktopLinksRef.current, { 
+            display: 'flex',
+            height: "auto",
             width: "auto", 
             opacity: 1, 
             scale: 1, 
@@ -185,10 +188,12 @@ export default function Header() {
     } else {
       tl.to(desktopLinksRef.current, { 
         width: 0, 
+        height: 0,
         opacity: 0, 
         scale: 0.8, 
         margin: 0,
         pointerEvents: "none", 
+        display: "none",
         duration: 0.3 
       })
       .to(navRef.current, { 
