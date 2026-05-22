@@ -102,60 +102,7 @@ export default function Hero() {
     };
   }, []);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const video = videoRef.current;
 
-    if (!section || !video) return;
-
-    let scrubTween: gsap.core.Tween | null = null;
-
-    const setupVideoScrub = () => {
-      scrubTween?.kill();
-
-      if (!video.duration || Number.isNaN(video.duration)) return;
-
-      video.pause();
-      video.currentTime = 0;
-
-      const playhead = { time: 0 };
-
-      scrubTween = gsap.to(playhead, {
-        time: Math.max(video.duration - 0.05, 0),
-        ease: "none",
-        onUpdate: () => {
-          if (video.readyState >= 2) {
-            video.currentTime = playhead.time;
-          }
-        },
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: HERO_VIDEO_SCROLL_DISTANCE,
-          scrub: 0.35,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      ScrollTrigger.refresh();
-    };
-
-    const handleLoadedMetadata = () => {
-      setupVideoScrub();
-    };
-
-    if (video.readyState >= 1) {
-      setupVideoScrub();
-    } else {
-      video.addEventListener("loadedmetadata", handleLoadedMetadata);
-    }
-
-    return () => {
-      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      scrubTween?.scrollTrigger?.kill();
-      scrubTween?.kill();
-    };
-  }, []);
 
   return (
     <section className="hero-section" ref={sectionRef}>
@@ -189,6 +136,7 @@ export default function Hero() {
                 muted
                 playsInline
                 preload="auto"
+                autoPlay
               />
             </div>
 
