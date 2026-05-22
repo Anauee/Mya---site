@@ -58,10 +58,8 @@ const ImpactQuote: React.FC = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: isMobile ? "+=180%" : "+=350%", // Fast, responsive scroll height on mobile
+          end: "bottom bottom",
           scrub: 1,
-          pin: true,
-          anticipatePin: 1,
         }
       });
 
@@ -104,7 +102,8 @@ const ImpactQuote: React.FC = () => {
 
   return (
     <section className="impact-quote-section" id="depoimentos" ref={sectionRef}>
-      <div className="quote-container">
+      <div className="impact-sticky-wrapper">
+        <div className="quote-container">
         <h2 className="quote-text" ref={textRef}>
           {words.map((word, i) => (
             <span key={i} className="quote-word">
