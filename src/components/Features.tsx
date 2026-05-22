@@ -390,7 +390,7 @@ export default function Features() {
                       <div className="chart-container-card">
                         <span className="chart-title">Vendas por Mês</span>
                         <div className="chart-svg-wrapper">
-                          <svg viewBox="0 0 400 200" className="dashboard-chart">
+                          <svg viewBox="0 0 400 200" className="dashboard-chart" preserveAspectRatio="none">
                             {/* Grid Lines */}
                             <line x1="0" y1="0" x2="400" y2="0" stroke="#f1f5f9" />
                             <line x1="0" y1="50" x2="400" y2="50" stroke="#f1f5f9" />
