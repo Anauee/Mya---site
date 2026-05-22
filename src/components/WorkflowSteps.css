@@ -312,8 +312,11 @@
   }
 
   .cta-button {
-    width: 80%;
+    width: 90%;
     min-width: unset !important;
     margin-left: 0;
+    padding: 16px 24px;
+    font-size: 1rem;
+    white-space: nowrap;
   }
 }
