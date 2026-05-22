@@ -281,7 +281,7 @@
 
   .impact-quote-section {
     min-height: 80vh !important; 
-    height: 130vh !important; /* Decrease height to release scroll sooner */
+    height: 200vh !important; /* Intermediate height for balanced scroll speed */
     padding: 24px 20px !important;
   }
 
