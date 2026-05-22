@@ -66,6 +66,7 @@ export default function PricingSection() {
           <a href={WHATSAPP_LINK_ATENDER} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
+          <div className="risk-free-text">Sem cartão e sem riscos!</div>
         </div>
 
         {/* Card 2: Escalar (Highlight) */}
@@ -111,6 +112,7 @@ export default function PricingSection() {
           <a href={WHATSAPP_LINK_ESCALAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-white">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
+          <div className="risk-free-text">Sem cartão e sem riscos!</div>
         </div>
 
         {/* Card 3: Fidelizar */}
@@ -151,6 +153,7 @@ export default function PricingSection() {
           <a href={WHATSAPP_LINK_FIDELIZAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
+          <div className="risk-free-text">Sem cartão e sem riscos!</div>
         </div>
 
       </div>

@@ -139,45 +139,26 @@ const CTASection: React.FC = () => {
 
       // --- MOBILE ANIMATION ---
       mm.add("(max-width: 768px)", () => {
-        // Rely purely on the new robust CSS for positioning anchor card
-        gsap.set(anchorCardRef.current, {
-          opacity: 1,
-          zIndex: 1,
-          scale: 1
-        });
-
-        // Setup the initial off-screen state for sell card
-        gsap.set(sellCardRef.current, {
-          top: "120%", 
-          zIndex: 10,
-          opacity: 1
-        });
-
+        // Clear any hardcoded positioning to let CSS handle static stacking
+        gsap.set(anchorCardRef.current, { clearProps: "all" });
+        gsap.set(sellCardRef.current, { clearProps: "all" });
         gsap.set(sellBgRef.current, { width: "100%", height: "100%", borderRadius: "24px" });
         gsap.set(sellOverlayRef.current, { opacity: 0.5 });
 
+        // Play the video if it's there
+        if (videoRef.current) {
+          videoRef.current.style.opacity = "0.8";
+          videoRef.current.play().catch(() => {});
+        }
+
+        // Only animate the scribbles (sublimação) on scroll without pinning the section
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: "+=80%",
-            pin: true,
-            scrub: 1,
+            trigger: sellCardRef.current,
+            start: "top 80%",
+            scrub: false,
           }
         });
-
-        tl.to(sellCardRef.current, {
-          top: "-16px", // Moved up more to fully cover the white card
-          duration: 2,
-          ease: "power2.out"
-        }, "cover");
-
-        tl.to(anchorCardRef.current, {
-          opacity: 0,
-          scale: 0.95,
-          duration: 1.5,
-          ease: "power2.out"
-        }, "cover+=0.5");
 
         scribbleRefs.current.forEach((path, index) => {
           if (path) {
@@ -188,7 +169,7 @@ const CTASection: React.FC = () => {
               strokeDashoffset: 0,
               duration: 1.5,
               ease: "power1.inOut"
-            }, `cover+=${1.0 + (index * 0.5)}`);
+            }, index * 0.5);
           }
         });
       });
@@ -208,7 +189,7 @@ const CTASection: React.FC = () => {
         {/* Anchor Card */}
         <div className="cta-card anchor-card" ref={anchorCardRef}>
           <div className="card-header">
-            <span className="card-subtitle">Antes da Mya</span>
+            <span className="card-subtitle">Com nossos concorrentes você pagaria</span>
             <h3 className="card-title">Custo de ferramentas separadas</h3>
           </div>
 
@@ -237,7 +218,7 @@ const CTASection: React.FC = () => {
 
           <div className="card-footer">
             <div className="total-label">Total mensal</div>
-            <div className="total-value">R$ 1.550,00</div>
+            <div className="total-value" style={{ textDecoration: 'line-through' }}>R$ 1.550,00</div>
             <p className="total-hint">+ Desperdício de tempo e dados soltos</p>
           </div>
         </div>
@@ -320,10 +301,15 @@ const CTASection: React.FC = () => {
             </div>
 
             <div className="card-footer">
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ fontSize: '1.8rem', fontWeight: 800, lineHeight: 1 }}>a partir de R$280/mês</div>
+                <div style={{ fontSize: '1rem', color: '#a7f3d0', fontWeight: 600, marginTop: '8px' }}>30 dias grátis</div>
+              </div>
               <button className="cta-final-btn">
                 <span>Começar teste gratuito</span>
                 <ArrowRight size={20} />
               </button>
+              <div style={{ fontSize: '0.85rem', color: '#a7f3d0', textAlign: 'center', marginTop: '12px', fontWeight: 500 }}>sem cartão e sem riscos!</div>
             </div>
           </div>
         </div>

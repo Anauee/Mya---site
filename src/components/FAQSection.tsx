@@ -20,11 +20,11 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Quanto tempo leva para a Mya estar rodando?",
-    answer: "A implementação básica leva menos de 24 horas. Em poucos cliques você configura sua conta, importa seus contatos e ativa sua primeira IA especialista."
+    answer: "No máximo 7 dias."
   },
   {
     question: "Meus dados estão seguros na plataforma?",
-    answer: "Segurança é nossa prioridade. Utilizamos criptografia de ponta a ponta e seguimos rigorosamente as normas da LGPD, garantindo que as informações do seu negócio e dos seus clientes estejam sempre protegidas."
+    answer: "Sim. Utilizamos criptografia de ponta a ponta e os mais altos padrões de segurança do mercado para garantir que as informações do seu negócio e dos seus clientes estejam sempre protegidas e restritas apenas a você."
   },
   {
     question: "A Mya funciona para qualquer tamanho de empresa?",

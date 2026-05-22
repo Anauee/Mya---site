@@ -227,6 +227,18 @@
   transform: translateY(-2px);
 }
 
+.risk-free-text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.highlight .risk-free-text {
+  color: #a7f3d0;
+}
+
 .pricing-footer {
   margin-top: 60px;
   text-align: center;

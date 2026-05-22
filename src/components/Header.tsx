@@ -169,6 +169,9 @@ export default function Header() {
             opacity: 1, 
             scale: 1, 
             margin: "20px 0 10px 0",
+            backgroundColor: "#ffffff",
+            padding: "20px",
+            borderRadius: "16px",
             pointerEvents: "auto", 
             duration: 0.3 
           }, "-=0.2");
@@ -192,6 +195,8 @@ export default function Header() {
         opacity: 0, 
         scale: 0.8, 
         margin: 0,
+        padding: 0,
+        backgroundColor: "transparent",
         pointerEvents: "none", 
         display: "none",
         duration: 0.3 
