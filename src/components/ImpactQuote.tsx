@@ -57,7 +57,7 @@ const ImpactQuote: React.FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: isMobile ? "top top" : "top 60%", 
           end: "bottom bottom",
           scrub: 1,
         }
@@ -65,11 +65,14 @@ const ImpactQuote: React.FC = () => {
 
       // Phase 1: Paint each word sequentially
       wordElements.forEach((word) => {
-        tl.to(word, {
-          color: "#0f172a",
-          duration: 0.35,
-          ease: "none",
-        });
+        tl.fromTo(word, 
+          { color: "#d1d5db" },
+          {
+            color: "#0f172a",
+            duration: 0.35,
+            ease: "none",
+          }
+        );
       });
 
       // Phase 2: Fade in author
@@ -95,6 +98,12 @@ const ImpactQuote: React.FC = () => {
         duration: 6,
         ease: "power2.out",
       }, "<");
+
+      // Without pin: true, a refresh is safe and fixes layout shift miscalculations (painted early on PC)
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 800);
+
     }, sectionRef);
 
     return () => ctx.revert();
