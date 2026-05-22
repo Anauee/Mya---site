@@ -258,10 +258,6 @@
   opacity: 0.5;
 }
 
-/* Pause on hover */
-.marquee-row:hover .marquee-track {
-  animation-play-state: paused;
-}
 
 @media (max-width: 1024px) {
   .quote-word {
