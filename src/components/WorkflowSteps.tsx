@@ -161,9 +161,15 @@ const WorkflowSteps: React.FC = () => {
 
         {/* Final CTA */}
         <div className="workflow-cta">
-          <button className="cta-button">
+          <a 
+            href="https://wa.me/5511964435210?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="cta-button"
+            style={{ textDecoration: 'none' }}
+          >
             Começar teste gratuito
-          </button>
+          </a>
         </div>
 
       </div>

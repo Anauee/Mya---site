@@ -305,10 +305,16 @@ const CTASection: React.FC = () => {
                 <div style={{ fontSize: '1.8rem', fontWeight: 800, lineHeight: 1 }}>a partir de R$280/mês</div>
                 <div style={{ fontSize: '1rem', color: '#a7f3d0', fontWeight: 600, marginTop: '8px' }}>30 dias grátis</div>
               </div>
-              <button className="cta-final-btn">
+              <a 
+                href="https://wa.me/5511964435210?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cta-final-btn"
+                style={{ textDecoration: 'none' }}
+              >
                 <span>Começar teste gratuito</span>
                 <ArrowRight size={20} />
-              </button>
+              </a>
               <div style={{ fontSize: '0.85rem', color: '#a7f3d0', textAlign: 'center', marginTop: '12px', fontWeight: 500 }}>sem cartão e sem riscos!</div>
             </div>
           </div>

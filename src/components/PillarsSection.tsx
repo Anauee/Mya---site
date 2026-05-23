@@ -173,10 +173,16 @@ export default function PillarsSection() {
         <p className="pillars-cta-text">
           Teste na sua empresa com 30 dias totalmente gratuitos!
         </p>
-        <button className="pillars-cta-btn">
+        <a 
+          href="https://wa.me/5511964435210?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="pillars-cta-btn"
+          style={{ textDecoration: 'none' }}
+        >
           <span>Começar teste gratuito</span>
           <ArrowRight size={20} />
-        </button>
+        </a>
       </div>
     </section>
   );
