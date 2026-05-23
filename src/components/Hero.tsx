@@ -171,7 +171,7 @@ export default function Hero() {
               Teste na sua empresa com 30 dias totalmente gratuitos!
             </p>
             <div className="hero-actions">
-              <a href="https://wa.me/554196634090?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." target="_blank" rel="noopener noreferrer" className="btn-primary">Começar teste gratuito</a>
+              <a href="https://wa.me/5511964435210?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." target="_blank" rel="noopener noreferrer" className="btn-primary">Começar teste gratuito</a>
             </div>
           </div>
 
