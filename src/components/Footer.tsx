@@ -40,7 +40,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><a href="#about">Sobre</a></li>
               <li><a href="#cta">Serviços</a></li>
-              <li><a href="https://wa.me/554196635378" target="_blank" rel="noopener noreferrer">Contato</a></li>
+              <li><a href="https://wa.me/554196634090" target="_blank" rel="noopener noreferrer">Contato</a></li>
             </ul>
           </div>
         </div>

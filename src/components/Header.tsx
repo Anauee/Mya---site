@@ -244,7 +244,7 @@ export default function Header() {
               </button>
             </div>
             
-            <a href="https://wa.me/554196635378?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." target="_blank" rel="noopener noreferrer" className="cta-btn" ref={ctaRef}>
+            <a href="https://wa.me/554196634090?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." target="_blank" rel="noopener noreferrer" className="cta-btn" ref={ctaRef}>
               <span className="desktop-text">Começar gratuitamente</span>
               <span className="mobile-text">Começar</span>
             </a>

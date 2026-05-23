@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./WhatsAppButton.css";
 
 // Configure your WhatsApp link and initial message here
-const WHATSAPP_NUMBER = "554196635378"; // Replace with real company WhatsApp number
+const WHATSAPP_NUMBER = "554196634090"; // Replace with real company WhatsApp number
 const PREFILLED_TEXT = encodeURIComponent("Olá! Vim pelo site da Mya e gostaria de saber mais sobre as soluções de IA SDR.");
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${PREFILLED_TEXT}`;
 
