@@ -63,7 +63,7 @@ export default function PricingSection() {
             </li>
           </ul>
           
-          <a href={WHATSAPP_LINK_ATENDER} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary">
+          <a href={WHATSAPP_LINK_ATENDER} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary utmify-checkout">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
           <div className="risk-free-text">Sem cartão e sem riscos!</div>
@@ -109,7 +109,7 @@ export default function PricingSection() {
             </li>
           </ul>
           
-          <a href={WHATSAPP_LINK_ESCALAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-white">
+          <a href={WHATSAPP_LINK_ESCALAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-white utmify-checkout">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
           <div className="risk-free-text">Sem cartão e sem riscos!</div>
@@ -150,7 +150,7 @@ export default function PricingSection() {
             </li>
           </ul>
           
-          <a href={WHATSAPP_LINK_FIDELIZAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary">
+          <a href={WHATSAPP_LINK_FIDELIZAR} target="_blank" rel="noopener noreferrer" className="pricing-btn btn-primary utmify-checkout">
             <WhatsAppIcon /> Começar teste gratuito
           </a>
           <div className="risk-free-text">Sem cartão e sem riscos!</div>

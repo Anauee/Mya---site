@@ -177,7 +177,7 @@ export default function PillarsSection() {
           href="https://wa.me/5511964435210?text=Ol%C3%A1!%20Gostaria%20de%20testar%20a%20Mya%20gratuitamente." 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="pillars-cta-btn"
+          className="pillars-cta-btn utmify-checkout"
           style={{ textDecoration: 'none' }}
         >
           <span>Começar teste gratuito</span>

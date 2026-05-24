@@ -48,7 +48,7 @@ export default function WhatsAppButton() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-btn"
+        className="whatsapp-btn utmify-checkout"
         aria-label="Fale conosco no WhatsApp"
         onClick={() => setShowTooltip(false)}
       >
